@@ -1,16 +1,4 @@
-const MONUMENTS = [
-    {
-        id: '389248',
-        title: 'pont-de-pierre',
-        description: "Le pont de pierre est un pont à voûtes en maçonnerie franchissant la Garonne à Bordeaux. Il permet de relier le centre-ville au quartier de La Bastide, sur la rive droite. Construit sur l’ordre de Napoléon Ier au début du XIXème siècle, ce pont été construit en pierre et en brique.",
-        enigma: "Je relie les deux rives et je compte 17 arches.",
-        picture: 'une-url-ça-on-remplira-pas-besoin-d-y-toucher',
-        position: {
-            lat: 44.838618056859936,
-            lon: -0.5625922731657745,
-        }
-    },
-]    
+
 
 // forme d'une url
 // https://findthemonument.netlify.app/#found-192892

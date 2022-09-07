@@ -7,6 +7,7 @@ const BASE_ZOOM = 13;
 
 window.addEventListener('DOMContentLoaded', function() {
     const map = new ol.Map({
+        controls: [], 
         // controls: new ol.control.defaults().extend([new AnimateAgainControl()]),
         target: 'map',
         layers: [
