@@ -1,33 +1,3 @@
-:root {
-    --p-container: 1rem;
-}
-
-body {
-    height: 100vh;
-}
-
-main, body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-main {
-    z-index: 10;
-}
-
-*{
-    margin:0;
-    padding: 0;
-    line-height: 1;
-}
-
-a, a:hover, a:visited 
-{
-    text-decoration: none;
-}
-
 .popup {
     z-index: 1000;
     position: fixed;

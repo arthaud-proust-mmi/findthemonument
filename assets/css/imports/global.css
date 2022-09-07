@@ -1,0 +1,23 @@
+:root {
+    --p-container: 1rem;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    line-height: 1;
+}
+
+a, a:hover, a:visited 
+{
+    text-decoration: none;
+}
+
