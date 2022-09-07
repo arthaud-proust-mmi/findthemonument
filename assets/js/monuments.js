@@ -23,10 +23,17 @@ function checkIfMonumentFoundInUrl() {
       
 
     const monumentId = pageHash.replace(FOUND_HASH_START_WITH,'');
+    monumentsFoundList = getFoundMonumentList();
+
     console.log(monumentId);
 
     if (!monumentExistWithId(monumentId)) {
         openPopupNoMonument();
+        return;
+    }
+
+    if(monumentsFoundList.includes(monumentId)) {
+        openPopupMonumentAlreadyFound();
         return;
     }
 
@@ -36,6 +43,8 @@ function checkIfMonumentFoundInUrl() {
     }
 
     addMonumentToFoundList(monumentId);
+
+    startNextEnigmaOrOpenPopupEnd();
 }
 
 function getFoundMonumentList() {

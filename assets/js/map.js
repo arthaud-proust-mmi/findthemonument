@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function() {
             image: new ol.style.Icon({
                 anchor: [0.2,1],
                 scale: 0.8,
-                src: '/assets/sprites/pin_primary.png',
+                src: '/assets/sprites/pin_primary_shadow.png',
             }),
             // image: new ol.style.Circle({
             //     fill: new ol.style.Fill({

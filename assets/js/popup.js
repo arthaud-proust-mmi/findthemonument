@@ -1,6 +1,9 @@
 const popupIntro = document.getElementById('popupIntro');
 const popupWrongMonument = document.getElementById('popupWrongMonument');
 const popupNoMonument = document.getElementById('popupNoMonument');
+const popupMonumentAlreadyFound = document.getElementById('popupMonumentAlreadyFound');
+const popupEnd = document.getElementById('popupEnd');
+
 const popupCloseBtns = document.querySelectorAll('.btn__close-popup')
 popupNoMonument
 window.addEventListener('DOMContentLoaded', function() {
@@ -18,6 +21,12 @@ window.addEventListener('DOMContentLoaded', function() {
     popupNoMonument.querySelector('.popup__backdrop').addEventListener('click', closePopupNoMonument);
     popupNoMonument.querySelector('.popup__btn-close').addEventListener('click', closePopupNoMonument);
     
+    popupMonumentAlreadyFound.querySelector('.popup__backdrop').addEventListener('click', closePopupMonumentAlreadyFound);
+    popupMonumentAlreadyFound.querySelector('.popup__btn-close').addEventListener('click', closePopupMonumentAlreadyFound);
+    
+    popupEnd.querySelector('.popup__backdrop').addEventListener('click', closePopupEnd);
+    popupEnd.querySelector('.popup__btn-close').addEventListener('click', closePopupEnd);
+    
 })
 
 
@@ -30,16 +39,14 @@ function closePopupIntro() {
     startFirstEnigmaIfNoneOngoing();
 }
 
-function openPopupWrongMonument() {
-    popupWrongMonument.classList.add('popup-open')
-}
-function closePopupWrongMonument() {
-    popupWrongMonument.classList.remove('popup-open')
-}
+function openPopupWrongMonument() {popupWrongMonument.classList.add('popup-open')}
+function closePopupWrongMonument() {popupWrongMonument.classList.remove('popup-open')}
 
-function openPopupNoMonument() {
-    popupNoMonument.classList.add('popup-open')
-}
-function closePopupNoMonument() {
-    popupNoMonument.classList.remove('popup-open')
-}
+function openPopupNoMonument() {popupNoMonument.classList.add('popup-open')}
+function closePopupNoMonument() {popupNoMonument.classList.remove('popup-open')}
+
+function openPopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.add('popup-open')}
+function closePopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.remove('popup-open')}
+
+function openPopupEnd() {popupEnd.classList.add('popup-open')}
+function closePopupEnd() {popupEnd.classList.remove('popup-open')}
