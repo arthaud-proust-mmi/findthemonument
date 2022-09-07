@@ -5,25 +5,12 @@
 // regex d'un id /^\d{6}$/m
 
 const FOUND_HASH_START_WITH = "#found-";
+const COOKIE_MONUMENTS_FOUND = "monuments_found";
 
 window.addEventListener('DOMContentLoaded', checkIfMonumentFoundInUrl)
 
-
 function monumentExistWithId(monumentId) {
     return MONUMENTS.findIndex(monument=>monument.id == monumentId) >= 0;
-}
-
-function getFoundMonumentList() {
-    const monumentsFoundString = Cookies.get("monuments_found");
-    let monumentsFoundList;
-
-    try {
-        monumentsFoundList = JSON.parse(monumentsFoundString);
-    } catch(e) {
-        monumentsFoundList = [];
-    }
-
-    return monumentsFoundList;
 }
 
 function checkIfMonumentFoundInUrl() {
@@ -43,6 +30,20 @@ function checkIfMonumentFoundInUrl() {
     }
 }
 
+function getFoundMonumentList() {
+    const monumentsFoundString = Cookies.get(COOKIE_MONUMENTS_FOUND);
+    let monumentsFoundList;
+
+    try {
+        monumentsFoundList = JSON.parse(monumentsFoundString);
+    } catch(e) {
+        monumentsFoundList = [];
+    }
+
+    return monumentsFoundList;
+}
+
+
 function addMonumentToFoundList(monumentId) {
     monumentsFoundList = getFoundMonumentList();
 
@@ -52,6 +53,5 @@ function addMonumentToFoundList(monumentId) {
     }
 
     console.log(monumentsFoundList);
-    Cookies.set("monuments_found", JSON.stringify(monumentsFoundList), { sameSite: 'strict', expires: 60 })
+    Cookies.set(COOKIE_MONUMENTS_FOUND, JSON.stringify(monumentsFoundList), { sameSite: 'strict', expires: 60 })
 }
-
