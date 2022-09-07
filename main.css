@@ -2,6 +2,51 @@
   position: fixed;
   top: 0;
   left: 0;
-  max-width: 100vw;
-  background: red;
+  width: 100vw;
+  background: transparent;
+}
+main{
+  height: 100vh;
+  display: flex;
+}
+main .bottom{
+  padding: 2rem;
+  width: 100vw;
+  max-height: 25vh;
+  display: flex;
+  align-self: flex-end;
+  background-color: #fff;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+
+main .bottom .bottom__info{
+  justify-self: start;
+  width: 70%;
+}
+.bottom__info-progression{
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  width: 15rem;
+  height: 0.5rem;
+  border-radius: 5rem;
+  background-color: rgb(72, 72, 72);
+}
+.bottom__info-progression .load-container__progress{
+  height: 0.5rem;
+  width: 50%;
+  border-radius: 5rem;
+  background-color: red;
+}
+main .bottom .bottom__info header{
+  margin-bottom: 1rem;
+}
+main .bottom .bottom__actions{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
+  justify-self: end;
+  width: 30%;
 }
