@@ -6,7 +6,9 @@ const MERCATOR_PROJ = "EPSG:3857";
 const BASE_ZOOM = 13;
 
 window.addEventListener('DOMContentLoaded', function() {
+
     const map = new ol.Map({
+        interactions: ol.interaction.defaults({altShiftDragRotate:false, pinchRotate:false}), 
         controls: [], 
         // controls: new ol.control.defaults().extend([new AnimateAgainControl()]),
         target: 'map',
@@ -38,7 +40,7 @@ window.addEventListener('DOMContentLoaded', function() {
         style: new ol.style.Style({
             image: new ol.style.Icon({
                 anchor: [0.2,1],
-                scale: 0.8,
+                scale: 0.4,
                 src: '/assets/sprites/pin_primary_shadow.png',
             }),
             // image: new ol.style.Circle({
