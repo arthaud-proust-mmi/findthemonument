@@ -13,7 +13,7 @@ main{
 main .bottom{
   padding: 2rem;
   /* width: 100vw; */
-  max-height: 25vh;
+  /* max-height: 25vh; */
   display: flex;
   align-self: flex-end;
   background-color: #fff;
@@ -29,7 +29,7 @@ main .bottom .bottom__info{
   display: flex;
   align-items: center;
   margin-top: 1rem;
-  width: 15rem;
+  width: 12rem;
   height: 0.5rem;
   border-radius: 5rem;
   background-color: rgb(72, 72, 72);
