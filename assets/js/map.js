@@ -36,12 +36,17 @@ window.addEventListener('DOMContentLoaded', function() {
         maxResolution: CLUSTER_RESOLUTION,
         source: monumentsSource,
         style: new ol.style.Style({
-            image: new ol.style.Circle({
-                fill: new ol.style.Fill({
-                    color: '#852b0c'
-                }),
-                radius: 5,
+            image: new ol.style.Icon({
+                anchor: [0.2,1],
+                scale: 0.8,
+                src: '/assets/sprites/pin_primary.png',
             }),
+            // image: new ol.style.Circle({
+            //     fill: new ol.style.Fill({
+            //         color: '#852b0c'
+            //     }),
+            //     radius: 5,
+            // }),
         }),
         zIndex: 1000
     });
