@@ -21,7 +21,6 @@ a, a:hover, a:visited
    top:50%;
    left:50%;
    transform: translate(-50%, -50%);
-   
 }
 
 .open
