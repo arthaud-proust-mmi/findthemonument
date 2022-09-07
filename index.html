@@ -18,13 +18,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
-        <link href="/assets/css/app.css" rel="stylesheet" />
+        <link href="/assets/css/imports/global.css" rel="stylesheet" />
+        <link href="/assets/css/imports/header.css" rel="stylesheet" />
+        <link href="/assets/css/imports/main.css" rel="stylesheet" />
+        <link href="/assets/css/imports/map.css" rel="stylesheet" />
+        <link href="/assets/css/imports/popup.css" rel="stylesheet" />
     </head>
     <body>
         <div id="map" class="map"></div>
         <header class="header">
             <!-- LOGO -->
-            <img class="header__logo">
+            <img class="header__logo" src="/assets/sprites/logo.png">
             <div class="header__info">
                 <span class="header__step-text">Tu es actuellement à:</span>
                 <h3 class="header__step-value">Musée d'Aquitaine</h3>
@@ -32,7 +36,9 @@
         </header>
         <main>
             <div class="actions">
-                <button id="popup-intro-btn" onclick="openPopupIntro()">?</button>
+                <button id="popup-intro-btn" onclick="openPopupIntro()">
+                    <img src="/assets/sprites/info.svg" alt="?">
+                </button>
             </div>
             <div class="bottom container">
                 <section class="bottom__info">
@@ -57,12 +63,40 @@
         <div class="popup" id="popupIntro">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <button class="popup__btn-close">X</button>
+                <button class="popup__btn-close">
+                    <img src="/assets/sprites/close.svg" alt="x">
+                </button>
                 <h1>Find The Monument</h1>
                 <h2>Qu'est ce que c'est?</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                     pellentesque ultricies risus, sit amet scelerisque est iaculis in.
+                </p>
+            </div>
+        </div>
+
+        <div class="popup" id="popupWrongMonument">
+            <div class="popup__backdrop"></div>
+            <div class="popup__inner">
+                <button class="popup__btn-close">
+                    <img src="/assets/sprites/close.svg" alt="x">
+                </button>
+                <h1>Oups...</h1>
+                <p>
+                    Ce n'est pas le bon QR code :(
+                </p>
+            </div>
+        </div>
+
+        <div class="popup" id="popupNoMonument">
+            <button class="popup__btn-close">
+                <img src="/assets/sprites/close.svg" alt="x">
+            </button>
+            <div class="popup__inner">
+                <button class="popup__btn-close">X</button>
+                <h1>Oulà?</h1>
+                <p>
+                    Ce QR code n'est lié à aucun monument !
                 </p>
             </div>
         </div>

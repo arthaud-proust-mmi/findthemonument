@@ -16,6 +16,8 @@ function monumentExistWithId(monumentId) {
 function checkIfMonumentFoundInUrl() {
     const pageHash = (new URL(window.location.href).hash);
 
+    history.pushState("", document.title, window.location.pathname+ window.location.search);
+
     // on coninue que si le hash correspond à un hash de monument trouvé
     if(!pageHash.startsWith(FOUND_HASH_START_WITH)) return;
       
@@ -23,11 +25,17 @@ function checkIfMonumentFoundInUrl() {
     const monumentId = pageHash.replace(FOUND_HASH_START_WITH,'');
     console.log(monumentId);
 
-    if (monumentExistWithId(monumentId)) {
-        addMonumentToFoundList(monumentId);
-        
-        // popup de félicitation
+    if (!monumentExistWithId(monumentId)) {
+        openPopupNoMonument();
+        return;
     }
+
+    if (monumentId !== getEnigmaOngoing()) {
+        openPopupWrongMonument();
+        return;
+    }
+
+    addMonumentToFoundList(monumentId);
 }
 
 function getFoundMonumentList() {

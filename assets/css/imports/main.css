@@ -5,58 +5,73 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    gap: 1rem;
 }
 
 
 .actions {
     flex-grow: 1;
     margin-left: auto;
-  
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     padding: var(--p-container);
-  }
-  
-  .bottom{
-    padding: 2rem 3rem;
-    /* width: 100vw; */
-    /* max-height: 25vh; */
-    display: flex;
-    align-self: flex-end;
-    background-color: #fff;
-    border-radius: 30px 30px 0 0;
-  }
-  
-  .bottom .bottom__info{
-    justify-self: start;
-    width: 70%;
-  }
-  .bottom__info-progression{
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    width: 12rem;
-    height: 0.5rem;
-    border-radius: 5rem;
-    background-color: rgb(72, 72, 72);
-  }
-  .bottom__info-progression .load-container__progress{
-    height: 0.5rem;
-    width: 50%;
-    border-radius: 5rem;
-    background-color: red;
-  }
-  .bottom .bottom__info header{
-    margin-bottom: 1rem;
-  }
-  .bottom .bottom__actions{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: end;
-    justify-self: end;
-    width: 30%;
-  }
-  
+}
+
+.actions button {
+  border: none;
+  background: none;
+  padding: 0.5rem;
+}
+
+.actions button img {
+  --size: 2rem;
+  height: var(--size).5;
+  width: var(--size);
+}
+
+
+
+.bottom{
+  padding: 2rem 3rem;
+  /* width: 100vw; */
+  /* max-height: 25vh; */
+  display: flex;
+  align-self: flex-end;
+  background-color: #fff;
+  border-radius: 30px 30px 0 0;
+}
+
+.bottom .bottom__info{
+  justify-self: start;
+  width: 70%;
+}
+.bottom__info-progression{
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  width: 12rem;
+  height: 0.5rem;
+  border-radius: 5rem;
+  background-color: rgb(72, 72, 72);
+}
+.bottom__info-progression .load-container__progress{
+  height: 0.5rem;
+  width: 50%;
+  border-radius: 5rem;
+  background-color: var(--primary);
+}
+.bottom .bottom__info header{
+  margin-bottom: 1rem;
+}
+.bottom .bottom__actions{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
+  justify-self: end;
+  width: 30%;
+}

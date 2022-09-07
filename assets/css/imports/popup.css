@@ -12,7 +12,7 @@
 
 .popup__backdrop {
     position: absolute;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.4);
     z-index: -1;
 }
 
@@ -50,6 +50,12 @@
     margin-left: auto;
     padding: 0.5rem;
     
-    /* background:none; */
+    background:none;
     border:none;
 }
+
+.popup__btn-close img {
+    --size: 1.3rem;
+    height: var(--size).5;
+    width: var(--size);
+  }
