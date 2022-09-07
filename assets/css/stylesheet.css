@@ -3,14 +3,18 @@
 }
 
 body {
+    height: 100vh;
+}
+
+main, body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
 
-    height: 100vh;
-    width: 100vw;
-
+main {
+    z-index: 10;
 }
 
 *{
@@ -25,6 +29,7 @@ a, a:hover, a:visited
 }
 
 .popup {
+    z-index: 1000;
     position: fixed;
     display:none;
 }

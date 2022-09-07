@@ -20,7 +20,6 @@
     </head>
     <body>
         <div id="map" class="map"></div>
-
         <header class="header">
             <!-- LOGO -->
             <img class="header__logo">
@@ -29,26 +28,29 @@
                 <h3 class="header__step-value">Musée d'Aquitaine</h3>
             </div>
         </header>
-        <div class="actions">
-            <button id="popup-intro-btn" onclick="openPopupIntro()">?</button>
-        </div>
-        <div class="bottom container">
-            <section class="bottom__info">
-                <header>
-                    <h4>Ta progression</h4>
-                    <span>Etape<span id="value-progression">1</span> sur 10</span>
-                </header>
-                <div class="bottom__info-text">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="bottom__info-progression">
-                <div class="load-container__progress"></div>
-                </div>
-            </section>
-            <section class="bottom__actions">
-                <button onclick="openPopupIntro()" class="btn__close-popup">Open</button>
-            </section>
-        </div>
+        <main>
+            <div class="actions">
+                <button id="popup-intro-btn" onclick="openPopupIntro()">?</button>
+            </div>
+            <div class="bottom container">
+                <section class="bottom__info">
+                    <header>
+                        <h4>Ta progression</h4>
+                        <span>Etape<span id="value-progression">1</span> sur 10</span>
+                    </header>
+                    <div class="bottom__info-text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="bottom__info-progression">
+                    <div class="load-container__progress"></div>
+                    </div>
+                </section>
+                <section class="bottom__actions">
+                    <button onclick="openPopupIntro()" class="btn__close-popup">Open</button>
+                </section>
+            </div>
+        </main>
+
 
         <div class="popup" id="popupIntro">
             <div class="popup__backdrop"></div>
