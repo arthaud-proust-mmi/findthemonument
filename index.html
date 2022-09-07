@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Find the monument</title>
-    <link href="stylesheet.css" rel="stylesheet" />
-    <link rel="stylesheet" href="main.css">
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/lib/ol-v6.15.1/ol.css" type="text/css">
-    <script src="/assets/js/lib/ol-v6.15.1/ol.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Find the monument</title>
 
-    <script src="assets/js/monuments.js"></script>
-    <link href="stylesheet.css" rel="stylesheet" />
-    <script src="assets/js/monument-found.js"></script>
-</head>
-<body>
-  <header class="header">
-    <!-- LOGO -->
-  </header>
-  <main>
-      <div id="map" class="map"></div>
-      <div class="bottom">
-          <section class="bottom__info">
-            <header>
-                <h4>Ta progression</h4>
-                <span>Etape <span id="value-progression">1</span> sur 10</span>
-            </header>
-            <div class="bottom__info-text">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, consequatur molestiae? </p>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+        <link rel="stylesheet" href="/assets/css/lib/ol-v6.15.1/ol.css" type="text/css">
+        <script src="/assets/js/lib/ol-v6.15.1/ol.js"></script>
+        <script src="assets/js/monuments.js"></script>
+        <link href="/assets/css/stylesheet.css" rel="stylesheet" />
+        <link href="/assets/css/map.css" rel="stylesheet" />
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header class="header">
+            <!-- LOGO -->
+        </header>
+        <main>
+            <div id="map" class="map"></div>
+            <div class="bottom">
+                <section class="bottom__info">
+                <header>
+                    <h4>Ta progression</h4>
+                    <span>Etape<span id="value-progression">1</span> sur 10</span>
+                </header>
+                <div class="bottom__info-text">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, consequatur molestiae? Reprehenderit quidem ut perferendis iusto pariatur ipsa libero mollitia ad ducimus corrupti repellendus quam aperiam impedit quia, tempore qui.</p>
+                </div>
+                <div class="bottom__info-progression">
+
+                </div>
+                </section>
+                <section class="bottom__actions">
+                <button onclick="popup__opener()" class="btn__popup">Open</button>
+                </section>
             </div>
-            <div class="bottom__info-progression">
-                <div class="load-container__progress"></div>
-            </div>
-          </section>
+        </main>
 
-          <section class="bottom__actions">
-          <button onclick="popup__opener()" class="btn__popup">Open</button>
-          </section>
-      </div>
-  </main>
+        <div class="popup">
+            <button onclick="popup__opener()" class="btn__popup">X</button>
+            <h1>Nom du bâtiment</h1>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            pellentesque ultricies risus, sit amet scelerisque est iaculis in.
+            </p>
+        </div>
 
-  <div class="popup">
-      <button onclick="popup__opener()" class="btn__popup">X</button>
-      <h1>Nom du bâtiment</h1>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-      pellentesque ultricies risus, sit amet scelerisque est iaculis in.
-      </p>
-  </div>
-
-  <script defer src="assets/js/map.js"></script>
-  <script src="/assets/js/popup.js"></script>
+        <script src="assets/js/map.js"></script>
+        <script src="/assets/js/popup.js"></script>
     </body>
 </html>

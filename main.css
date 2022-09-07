@@ -8,6 +8,7 @@
 main{
   height: 100vh;
   display: flex;
+  flex-direction: column;
 }
 main .bottom{
   padding: 2rem;
