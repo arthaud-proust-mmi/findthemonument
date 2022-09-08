@@ -13,23 +13,29 @@ window.addEventListener('DOMContentLoaded', function() {
         openPopupIntro()
     }
 
-    popupIntro.querySelector('.popup__backdrop').addEventListener('click', closePopupIntro);
-    popupIntro.querySelector('.popup__btn-close').addEventListener('click', closePopupIntro);
+    popupIntro.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupIntro);
+    });
 
-    popupWrongMonument.querySelector('.popup__backdrop').addEventListener('click', closePopupWrongMonument);
-    popupWrongMonument.querySelector('.popup__btn-close').addEventListener('click', closePopupWrongMonument);
+    popupWrongMonument.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupWrongMonument);
+    })
 
-    popupNoMonument.querySelector('.popup__backdrop').addEventListener('click', closePopupNoMonument);
-    popupNoMonument.querySelector('.popup__btn-close').addEventListener('click', closePopupNoMonument);
+    popupNoMonument.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupNoMonument);
+    })
+
+    popupMonumentAlreadyFound.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupMonumentAlreadyFound);
+    });
     
-    popupMonumentAlreadyFound.querySelector('.popup__backdrop').addEventListener('click', closePopupMonumentAlreadyFound);
-    popupMonumentAlreadyFound.querySelector('.popup__btn-close').addEventListener('click', closePopupMonumentAlreadyFound);
-    
-    popupEnd.querySelector('.popup__backdrop').addEventListener('click', closePopupEnd);
-    popupEnd.querySelector('.popup__btn-close').addEventListener('click', closePopupEnd);
+    popupEnd.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupEnd);
+    })
 
-    popupHint.querySelector('.popup__backdrop').addEventListener('click', closePopupHint);
-    popupHint.querySelector('.popup__btn-close').addEventListener('click', closePopupHint);
+    popupHint.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupHint);
+    })
     
 })
 
