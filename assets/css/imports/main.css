@@ -19,27 +19,33 @@ main {
 
 
 .actions {
+    pointer-events: none;
+
     z-index: 15;
     flex-grow: 1;
     margin-left: auto;
+    margin-right: var(--p-container);
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: var(--p-container);
+    padding: 2rem;
 }
 
 .actions button {
+  pointer-events: all;
   border: none;
   background: none;
-  padding: 0.5rem;
 }
 
 .actions button img {
-  --size: 2rem;
-  height: var(--size).5;
+  --size: 1.5rem;
+  height: var(--size);
   width: var(--size);
+  background: var(--primary);
+  border-radius: 100%;
+  padding: 0.5rem;
 }
 
 
@@ -87,10 +93,18 @@ main {
 }
 
 .bottom__hint {
-  --size: 2rem;
+  background: none;
+  border: none;
+
+}
+
+.bottom__hint img {
+  --size: 1.5rem;
   height: var(--size);
   width: var(--size);
 
-  border: none;
-  background: none;
+  background: var(--primary);
+  border-radius: 100%;
+  padding: .5rem;
 }
+
