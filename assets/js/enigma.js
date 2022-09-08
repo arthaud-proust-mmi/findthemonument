@@ -1,5 +1,11 @@
 const COOKIE_ONGOING_ENIGMA = "ongoing_enigma";
 
+window.addEventListener("DOMContentLoaded", function(){
+  if(isEnigmaOngoing()){
+    startEnigma(getEnigmaOngoing());
+  }
+})
+
 function isEnigmaOngoing() {
     return !!getEnigmaOngoing();
 }
@@ -37,13 +43,12 @@ function startEnigma(monumentId) {
     // mettre à jour les infos de l'ui
     updateTitle();
     updateEnigma();
+    updateProgressBar()
 }
 
 function startNextEnigmaOrOpenPopupEnd() {
     const enigmaOngoingIndex = getEnigmaOngoingIndex();
 
-    console.log(enigmaOngoingIndex);
-    console.log(MONUMENTS.length-1);
     if(enigmaOngoingIndex < MONUMENTS.length-1) {
         openPopupMonumentFound(MONUMENTS[enigmaOngoingIndex]);
         const nextEnigmaMonumentId = MONUMENTS[enigmaOngoingIndex+1].id
@@ -57,13 +62,17 @@ function startNextEnigmaOrOpenPopupEnd() {
 function updateTitle(){
   const newTitle = MONUMENTS[getEnigmaOngoingIndex()].title;
   const header__step_value = document.querySelector('.header__step-value');
-  // const popupInfoMonument__title = document.querySelector('.popupInfoMonument__title');
   header__step_value.innerHTML = newTitle;
-  // popupInfoMonument__title.innerHTML = newTitle;
 }
 function updateEnigma(){
   const newEnigma = MONUMENTS[getEnigmaOngoingIndex()].enigma;
   const bottom__info_text_item = document.querySelector('#bottom__info-text_item');
   bottom__info_text_item.innerHTML = newEnigma;
-  console.log(newEnigma)
+}
+function updateProgressBar(){
+  const load_container__progress = document.querySelector(".load-container__progress");
+  const value_progression = document.querySelector('#value-progression');
+  value_progression.innerHTML = getEnigmaOngoingIndex();
+  let value = getEnigmaOngoingIndex() * 10;
+  load_container__progress.style.width = ""+value+"%";
 }

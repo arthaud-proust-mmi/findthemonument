@@ -65,13 +65,14 @@ main {
   width: 12rem;
   height: 0.5rem;
   border-radius: 5rem;
-  background-color: rgb(72, 72, 72);
+  background-color: #ebebeb;
 }
 .bottom__info-progression .load-container__progress{
   height: 0.5rem;
-  width: 50%;
+  width: 0%;
   border-radius: 5rem;
   background-color: var(--primary);
+  transition: width 0.5s;
 }
 .bottom__info header{
   margin-bottom: 1rem;
@@ -93,4 +94,3 @@ main {
   border: none;
   background: none;
 }
-
