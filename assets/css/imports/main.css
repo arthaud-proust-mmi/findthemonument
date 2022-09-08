@@ -73,10 +73,10 @@ main {
   border-radius: 5rem;
   background-color: var(--primary);
 }
-.bottom .bottom__info header{
+.bottom__info header{
   margin-bottom: 1rem;
 }
-.bottom .bottom__actions{
+.bottom__actions{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -84,3 +84,13 @@ main {
   justify-self: end;
   width: 30%;
 }
+
+.bottom__hint {
+  --size: 2rem;
+  height: var(--size);
+  width: var(--size);
+
+  border: none;
+  background: none;
+}
+
