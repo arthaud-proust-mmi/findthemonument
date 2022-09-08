@@ -45,6 +45,7 @@ function startNextEnigmaOrOpenPopupEnd() {
     console.log(enigmaOngoingIndex);
     console.log(MONUMENTS.length-1);
     if(enigmaOngoingIndex < MONUMENTS.length-1) {
+        openPopupMonumentFound(MONUMENTS[enigmaOngoingIndex]);
         const nextEnigmaMonumentId = MONUMENTS[enigmaOngoingIndex+1].id
         startEnigma(nextEnigmaMonumentId);
     } else {
