@@ -5,6 +5,7 @@ const popupMonumentAlreadyFound = document.getElementById('popupMonumentAlreadyF
 const popupHint = document.getElementById('popupHint');
 const popupEnd = document.getElementById('popupEnd');
 const popupInfoMonument = document.getElementById('popupInfoMonument');
+const popupMonumentFound = document.getElementById('popupMonumentFound');
 
 const popupCloseBtns = document.querySelectorAll('.btn__close-popup')
 popupNoMonument
@@ -41,6 +42,10 @@ window.addEventListener('DOMContentLoaded', function() {
     popupInfoMonument.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupInfoMonument);
     })
+
+    popupMonumentFound.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupMonumentFound);
+    })
     
 })
 
@@ -72,6 +77,13 @@ function closePopupHint() {popupHint.classList.remove('popup-open')}
 function openPopupInfoMonument(monumentData) {
     popupInfoMonument.querySelector('#popupInfoMonument__title').innerText = monumentData.title
     popupInfoMonument.querySelector('#popupInfoMonument__description').innerText = monumentData.description
+    popupInfoMonument.querySelector('#popupInfoMonument__funfact-text').innerText = monumentData.funfact
     popupInfoMonument.classList.add('popup-open')
 }
 function closePopupInfoMonument() {popupInfoMonument.classList.remove('popup-open')}
+
+function openPopupMonumentFound(monumentData) {
+    popupMonumentFound.querySelector('#popupMonumentFound__text').innerText = `Tu as trouvé, c'était bien ${monumentData.title}!`
+    popupMonumentFound.classList.add('popup-open')
+}
+function closePopupMonumentFound() {popupMonumentFound.classList.remove('popup-open')}

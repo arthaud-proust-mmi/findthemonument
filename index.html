@@ -16,7 +16,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
         <link href="/assets/css/imports/global.css" rel="stylesheet" />
         <link href="/assets/css/imports/header.css" rel="stylesheet" />
@@ -94,10 +94,9 @@
         <div class="popup" id="popupNoMonument">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h1>Oulà?</h1>
+                <but<link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">Oulà?</h1>
                 <p>
                     Ce QR code n'est lié à aucun monument !
                 </p>
@@ -120,12 +119,23 @@
         <div class="popup" id="popupHint">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
+                <button class="popup__btn-close">
+                    <img src="/assets/sprites/close.svg" alt="x">
+                </button>
                 <h1>Indice</h1>
                 <p>
                     photo 
                 </p>
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
+            </div>
+        </div>
+
+        <div class="popup" id="popupMonumentFound">
+            <div class="popup__backdrop"></div>
+            <div class="popup__inner">
+                <h1>Bravo !</h1>
+                <p id="popupMonumentFound__text"></p>
+                <button class="popup__btn-cta">
+                    Énigme suivante
                 </button>
             </div>
         </div>
@@ -150,10 +160,12 @@
                 <button class="popup__btn-close">
                     <img src="/assets/sprites/close.svg" alt="x">
                 </button>
-                <h1 id="popupInfoMonument__title"></h1>
-                <p id="popupInfoMonument__description"></p>
-                <h2 id="popupInfoMonument__funfact-title"></h2>
-                <p id="popupInfoMonument__funfact-text"></p>
+                <div class="popup__scroll">
+                    <h1 id="popupInfoMonument__title"></h1>
+                    <p id="popupInfoMonument__description"></p>
+                    <h2 id="popupInfoMonument__funfact-title">Petite anecdote</h2>
+                    <p id="popupInfoMonument__funfact-text"></p>
+                </div>
             </div>
         </div>
 

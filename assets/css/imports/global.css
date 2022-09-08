@@ -6,7 +6,12 @@
     --primary: #6F1C36;
     --white: FFF4E8;
     --text: 1E1E1E;
-    --background: #FFDCBB;
+    --background: #FFECD9;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
 }
 
 body {
@@ -28,5 +33,32 @@ body {
 a, a:hover, a:visited 
 {
     text-decoration: none;
+}
+
+h1 {
+    font-size: 1.25rem;
+    font-weight: var(--fw-medium);
+    padding-top: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: var(--fw-semibold);
+    padding-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+h3 {
+    font-size: 0.875rem;
+    font-weight: var(--fw-semibold);
+    padding-top: 0.3rem;
+    margin-bottom: 0.4rem;
+}
+
+p {
+    font-size: 0.875rem;
+    font-weight: var(--fw-regular);
+    margin-bottom: 0.4rem;
 }
 
