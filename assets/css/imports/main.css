@@ -1,5 +1,13 @@
+.container-global{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 main {
     z-index: 10;
+
+    width: 100vw;
 
     display: flex;
     flex-direction: column;
@@ -11,9 +19,10 @@ main {
 
 
 .actions {
+    z-index: 15;
     flex-grow: 1;
     margin-left: auto;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -37,8 +46,6 @@ main {
 
 .bottom{
   padding: 2rem 3rem;
-  /* width: 100vw; */
-  /* max-height: 25vh; */
   display: flex;
   align-self: flex-end;
   background-color: #fff;

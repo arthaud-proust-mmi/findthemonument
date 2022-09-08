@@ -9,11 +9,11 @@
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
         <link rel="stylesheet" href="/assets/css/lib/ol-v6.15.1/ol.css" type="text/css">
         <script src="/assets/js/lib/ol-v6.15.1/ol.js"></script>
-        
+
         <script src="assets/js/monuments-data.js"></script>
         <script src="assets/js/monuments.js"></script>
         <script src="assets/js/enigma.js"></script>
-        
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,38 +26,40 @@
     </head>
     <body>
         <div id="map" class="map"></div>
-        <header class="header">
-            <!-- LOGO -->
-            <img class="header__logo" src="/assets/sprites/logo.png">
-            <div class="header__info">
-                <span class="header__step-text">Tu es actuellement à:</span>
-                <h3 class="header__step-value">Musée d'Aquitaine</h3>
-            </div>
-        </header>
-        <main>
-            <div class="actions">
-                <button id="popup-intro-btn" onclick="openPopupIntro()">
-                    <img src="/assets/sprites/info.svg" alt="?">
-                </button>
-            </div>
-            <div class="bottom container">
-                <section class="bottom__info">
-                    <header>
-                        <h4>Ta progression</h4>
-                        <span>Etape<span id="value-progression">1</span> sur 10</span>
-                    </header>
-                    <div class="bottom__info-text">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="bottom__info-progression">
-                    <div class="load-container__progress"></div>
-                    </div>
-                </section>
-                <section class="bottom__actions">
-                    <button onclick="openPopupIntro()" class="btn__close-popup">Open</button>
-                </section>
-            </div>
-        </main>
+        <div class="container-global">
+          <header class="header">
+              <!-- LOGO -->
+              <img class="header__logo" src="/assets/sprites/logo.png">
+              <div class="header__info">
+                  <span class="header__step-text">Tu es actuellement à:</span>
+                  <h3 class="header__step-value">Musée d'Aquitaine</h3>
+              </div>
+          </header>
+          <div class="actions">
+            <button id="popup-intro-btn" onclick="openPopupIntro()">
+                <img src="/assets/sprites/info.svg" alt="?">
+            </button>
+          </div>
+          <main>
+              <div class="bottom container">
+                  <section class="bottom__info">
+                      <header>
+                          <h4>Ta progression</h4>
+                          <span>Etape<span id="value-progression">1</span> sur 10</span>
+                      </header>
+                      <div class="bottom__info-text">
+                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                      </div>
+                      <div class="bottom__info-progression">
+                      <div class="load-container__progress"></div>
+                      </div>
+                  </section>
+                  <section class="bottom__actions">
+                      <button onclick="openPopupIntro()" class="btn__close-popup">Open</button>
+                  </section>
+              </div>
+          </main>
+        </div>
 
 
         <div class="popup" id="popupIntro">
