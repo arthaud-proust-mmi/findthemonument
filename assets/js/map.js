@@ -52,6 +52,16 @@ window.addEventListener('DOMContentLoaded', function() {
         }),
         zIndex: 1000
     });
+
+    map.on('click', function (evt) {
+        const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+            return feature;
+        });
+        if (!feature) return;
+
+        openPopupInfoMonument(feature.attributes.monumentData);
+      });
+
     map.addLayer(unclusteredMonumentsLayer)
 })
 
