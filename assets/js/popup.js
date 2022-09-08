@@ -2,6 +2,7 @@ const popupIntro = document.getElementById('popupIntro');
 const popupWrongMonument = document.getElementById('popupWrongMonument');
 const popupNoMonument = document.getElementById('popupNoMonument');
 const popupMonumentAlreadyFound = document.getElementById('popupMonumentAlreadyFound');
+const popupHint = document.getElementById('popupHint');
 const popupEnd = document.getElementById('popupEnd');
 
 const popupCloseBtns = document.querySelectorAll('.btn__close-popup')
@@ -26,6 +27,9 @@ window.addEventListener('DOMContentLoaded', function() {
     
     popupEnd.querySelector('.popup__backdrop').addEventListener('click', closePopupEnd);
     popupEnd.querySelector('.popup__btn-close').addEventListener('click', closePopupEnd);
+
+    popupHint.querySelector('.popup__backdrop').addEventListener('click', closePopupHint);
+    popupHint.querySelector('.popup__btn-close').addEventListener('click', closePopupHint);
     
 })
 
@@ -50,3 +54,6 @@ function closePopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.r
 
 function openPopupEnd() {popupEnd.classList.add('popup-open')}
 function closePopupEnd() {popupEnd.classList.remove('popup-open')}
+
+function openPopupHint() {popupHint.classList.add('popup-open')}
+function closePopupHint() {popupHint.classList.remove('popup-open')}

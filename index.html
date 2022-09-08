@@ -55,7 +55,7 @@
                       </div>
                   </section>
                   <section class="bottom__actions">
-                      <button onclick="openPopupIntro()" class="btn__close-popup">Open</button>
+                      <button onclick="openPopupHint()" class="btn__close-popup">Open</button>
                   </section>
               </div>
           </main>
@@ -65,15 +65,14 @@
         <div class="popup" id="popupIntro">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h1>Find The Monument</h1>
-                <h2>Qu'est ce que c'est?</h2>
+                <h1>Pars à la découverte de Bordeaux en 10 monuments</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                     pellentesque ultricies risus, sit amet scelerisque est iaculis in.
                 </p>
+                <button class="popup__btn-close btn__center">
+                    C'est parti
+                </button>
             </div>
         </div>
 
@@ -113,6 +112,19 @@
                 <p>
                     Tu as déjà scanné ce code QR :)
                 </p>
+            </div>
+        </div>
+
+        <div class="popup" id="popupHint">
+            <div class="popup__backdrop"></div>
+            <div class="popup__inner">
+                <h1>Indice</h1>
+                <p>
+                    photo 
+                </p>
+                <button class="popup__btn-close">
+                    <img src="/assets/sprites/close.svg" alt="x">
+                </button>
             </div>
         </div>
 
