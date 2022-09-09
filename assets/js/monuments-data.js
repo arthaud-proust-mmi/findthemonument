@@ -1,7 +1,7 @@
 const MONUMENTS = [
     {
         id: '384738',
-        title: 'Église sainte-croix de Bordeaux',
+        title: 'Église Sainte-Croix de Bordeaux',
         enigma: "Proche de la gare, mon nom est lié au symbole de ma religion.",
         description: "Ancienne église abbatiale d’un monastère fondé au XVIIème siècle, l’église Sainte-Croix est aujourd’hui une trace des siècles passés, puisqu'elle se compose de trois structures distinctes réalisées à des époques distinctes. On retrouve ainsi de chaque côté du porche datant du XXIe siècle, deux clochers construits aux XII et XIXèmes siècles.",
         funfact: "Malgré les attaques incessantes (deux) contre cette magnifique église, les destructions à répétitions (toujours deux), celle-ci se tient aujourd’hui encore droite et fière au cœur de Bordeaux. ",
@@ -77,7 +77,7 @@ const MONUMENTS = [
     },
     {
         id: '498274',
-        title: 'Place des quinconces',
+        title: 'Place des Quinconces',
         enigma: "Je suis la plus grande place de France, possédant une œuvre dédiée aux anciens girondins.",
         description: "La place des Quinconces est créée au début du XIXe siècle sur l'emplacement du château Trompette, elle est composée d'une esplanade vers la Garonne encadrée au nord et au sud de plantations d'arbres. Le monument principal de la place est le monument aux Girondins élevé entre 1894 et 1902 à la mémoire des députés Girondins victimes de la Terreur et célébrant la République.",
         funfact: "En 2019, Nicki Minaj a annulé son concert pour se rendre à la foire de Bordeaux située sur la place des Quinconces.",

@@ -7,6 +7,30 @@ const BASE_ZOOM = 13;
 
 const monumentsSource = new ol.source.Vector({});
 
+
+const pinStyles = {
+    normal: new ol.style.Style({
+        image: new ol.style.Icon({
+            anchor: [0.2,1],
+            scale: 0.4,
+            src: '/assets/sprites/pin_primary_shadow.png',
+        }),
+        // image: new ol.style.Circle({
+        //     fill: new ol.style.Fill({
+        //         color: '#852b0c'
+        //     }),
+        //     radius: 5,
+        // }),
+    }),
+    last: new ol.style.Style({
+        image: new ol.style.Icon({
+            anchor: [0.2,1],
+            scale: 0.4,
+            src: '/assets/sprites/pin_clay_shadow.png',
+        }),
+    }),
+}
+
 window.addEventListener('DOMContentLoaded', function() {
 
     const map = new ol.Map({
@@ -38,19 +62,6 @@ window.addEventListener('DOMContentLoaded', function() {
     const unclusteredMonumentsLayer = new ol.layer.Vector({
         maxResolution: CLUSTER_RESOLUTION,
         source: monumentsSource,
-        style: new ol.style.Style({
-            image: new ol.style.Icon({
-                anchor: [0.2,1],
-                scale: 0.4,
-                src: '/assets/sprites/pin_primary_shadow.png',
-            }),
-            // image: new ol.style.Circle({
-            //     fill: new ol.style.Fill({
-            //         color: '#852b0c'
-            //     }),
-            //     radius: 5,
-            // }),
-        }),
         zIndex: 1000
     });
 
@@ -86,6 +97,16 @@ function renderMonument(monumentData) {
         monumentData.position.lon,
         monumentData.position.lat
     ])))
+
+    const monumentsFoundList = getFoundMonumentList();
+
+    monumentFeature.setStyle(
+        monumentData.id == monumentsFoundList[monumentsFoundList.length-1] 
+        ?
+        pinStyles.last
+        :
+        pinStyles.normal
+    );
 
     monumentFeature.attributes = {monumentData};
 
