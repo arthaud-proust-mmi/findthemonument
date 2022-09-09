@@ -57,10 +57,10 @@
     position:relative; 
 }
 
-.popup__btn-cta
-{    
-    margin-top:20px;
+.popup__btn-cta {    
+    margin-top: 1rem;
 }
+
 
 .popup__btn-close img {
     --size: 1.3rem;
@@ -75,12 +75,12 @@
     margin: 1.5rem 0;
 }
 
-.popupHint__image-container {
+.popupHint__image-container, .popupHintQR__image-container {
     border-radius: 30px;
     overflow: hidden;
     margin: 1rem 0;
 }
-#popupHint__image {
+#popupHint__image, #popupHintQR__image {
     height: auto;
     width: 100%;
     aspect-ratio: 1/1;
@@ -88,7 +88,8 @@
 
     user-select: none;
     pointer-events: none;
-
+}
+#popupHint__image {
     filter: blur(2px);
 }
 

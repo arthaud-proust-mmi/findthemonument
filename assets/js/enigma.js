@@ -51,7 +51,8 @@ function startFirstEnigma() {
 }
 
 function startEnigma(monumentId) {
-    showInGameBottom();
+    showIngameBottom();
+    showIngameHeader();
     setEnigmaOngoing(monumentId);
 
     // mettre à jour les infos de l'ui

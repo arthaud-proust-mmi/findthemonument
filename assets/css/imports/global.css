@@ -63,7 +63,7 @@ p {
     margin-bottom: 0.6rem;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-secondary, .btn-tertiary {
     background:none;
     border:none;
 
@@ -86,6 +86,10 @@ p {
 .btn-secondary {
     color: var(--primary);
     background: var(--ligthPrimary);
+}
+.btn-tertiary {
+    color: var(--primary);
+    background: var(--white);
 }
 
 

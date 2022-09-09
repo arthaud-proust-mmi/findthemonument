@@ -48,7 +48,7 @@ function showGameEndedHeader() {
     ingameHeader.classList.remove('header-visible');
 }
 
-function showInGameBottom() {
+function showIngameBottom() {
   const gameEndedEnded = document.getElementById('bottom-ended');
   const ingameBottom = document.getElementById('bottom-ingame');
 

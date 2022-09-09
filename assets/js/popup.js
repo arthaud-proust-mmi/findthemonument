@@ -8,9 +8,10 @@ const popupEnd = document.getElementById('popupEnd');
 const popupInfoMonument = document.getElementById('popupInfoMonument');
 const popupMonumentFound = document.getElementById('popupMonumentFound');
 const popupCredits = document.getElementById('popupCredits');
+const popupHintQR = document.getElementById('popupHintQR');
 
-const popupCloseBtns = document.querySelectorAll('.btn__close-popup')
-popupNoMonument
+const popupCloseBtns = document.querySelectorAll('.btn__close-popup');
+
 window.addEventListener('DOMContentLoaded', function() {
 
     if(!isEnigmaOngoing()) {
@@ -57,6 +58,15 @@ window.addEventListener('DOMContentLoaded', function() {
     popupCredits.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupCredits);
     })
+
+    popupHintQR.querySelectorAll('.popup__backdrop, .popup__btn-close').forEach(el=>{
+        el.addEventListener('click', closePopupHintQR);
+    })
+    popupHintQR.querySelector('.popup__btn-cta').addEventListener('click', e=>{
+        closePopupHintQR()
+        showEnigmaSolution()
+    });
+
 
 })
 
@@ -116,3 +126,11 @@ function closePopupMonumentFound() {popupMonumentFound.classList.remove('popup-o
 
 function openPopupCredits() {popupCredits.classList.add('popup-open')}
 function closePopupCredits() {popupCredits.classList.remove('popup-open')}
+
+
+function openPopupHintQR() {
+    const monumentData = getEnigmaOngoingMonumentData();
+    popupHintQR.querySelector('#popupHintQR__image').src = monumentData.images.qr;
+    popupHintQR.classList.add('popup-open')
+}
+function closePopupHintQR() {popupHintQR.classList.remove('popup-open')}
