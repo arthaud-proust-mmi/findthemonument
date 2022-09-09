@@ -34,8 +34,8 @@
   margin: 0;
   padding: 0;
 }
-.header__step-value {
-  /* font-weight: 500; */
+.header__step-text {
+  font-size: 0.8rem;
 }
 
 
