@@ -92,6 +92,9 @@ p {
     background: var(--white);
 }
 
+.text-icon {
+    height: 1rem;
+}
 
 #nolargescreen {
     display: none;

@@ -26,7 +26,7 @@ const pinStyles = {
         image: new ol.style.Icon({
             anchor: [0.2,1],
             scale: 0.4,
-            src: '/assets/sprites/pin_clay_shadow.png',
+            src: '/assets/sprites/pin_yellow_shadow.png',
         }),
     }),
 }
