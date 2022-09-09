@@ -79,11 +79,13 @@
     border-radius: 30px;
     overflow: hidden;
     margin-bottom: 1rem;
-}
-#popupHint__image, #popupHintQR__image {
     height: auto;
     width: 100%;
     aspect-ratio: 1/1;
+}
+#popupHint__image, #popupHintQR__image {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 
     user-select: none;
