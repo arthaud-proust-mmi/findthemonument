@@ -1,4 +1,5 @@
 const popupIntro = document.getElementById('popupIntro');
+const popupRules = document.getElementById('popupRules');
 const popupWrongMonument = document.getElementById('popupWrongMonument');
 const popupNoMonument = document.getElementById('popupNoMonument');
 const popupMonumentAlreadyFound = document.getElementById('popupMonumentAlreadyFound');
@@ -10,13 +11,17 @@ const popupMonumentFound = document.getElementById('popupMonumentFound');
 const popupCloseBtns = document.querySelectorAll('.btn__close-popup')
 popupNoMonument
 window.addEventListener('DOMContentLoaded', function() {
-  
+
     if(!isEnigmaOngoing()) {
         openPopupIntro()
     }
 
     popupIntro.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupIntro);
+    });
+
+    popupRules.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupRules);
     });
 
     popupWrongMonument.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
@@ -30,7 +35,7 @@ window.addEventListener('DOMContentLoaded', function() {
     popupMonumentAlreadyFound.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupMonumentAlreadyFound);
     });
-    
+
     popupEnd.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupEnd);
     })
@@ -47,7 +52,7 @@ window.addEventListener('DOMContentLoaded', function() {
     popupMonumentFound.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupMonumentFound);
     })
-    
+
 })
 
 
@@ -56,6 +61,14 @@ function openPopupIntro() {
 }
 function closePopupIntro() {
     popupIntro.classList.remove('popup-open')
+
+    startFirstEnigmaIfNoneOngoing();
+}
+function openPopupRules() {
+  popupRules.classList.add('popup-open')
+}
+function closePopupRules() {
+    popupRules.classList.remove('popup-open')
 
     startFirstEnigmaIfNoneOngoing();
 }
