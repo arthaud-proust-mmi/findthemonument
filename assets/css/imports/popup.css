@@ -67,6 +67,12 @@
     width: var(--size);
 }
 
+#popupEnd .popup__inner {
+    align-items: center;
+}
+#popupEnd .popup__inner img {
+    margin: 1.5rem 0;
+}
 
 .popupHint__image-container {
     border-radius: 30px;

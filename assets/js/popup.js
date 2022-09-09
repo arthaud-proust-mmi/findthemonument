@@ -82,8 +82,7 @@ function closePopupNoMonument() {popupNoMonument.classList.remove('popup-open')}
 function openPopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.add('popup-open')}
 function closePopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.remove('popup-open')}
 
-function openPopupEnd(monumentData) {
-    popupEnd.querySelector('#popupEnd__text').innerHTML = `Tu as trouvé, c'était bien <b>${monumentData.title}</b>!`
+function openPopupEnd() {
     popupEnd.classList.add('popup-open')
 }
 function closePopupEnd() {popupEnd.classList.remove('popup-open')}

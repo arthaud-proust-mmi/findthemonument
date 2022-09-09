@@ -73,10 +73,3 @@ function addMonumentToFoundList(monumentId) {
 
     renderOnlyFoundMonuments();
 }
-
-function isGameEnded() {
-    if(getEnigmaOngoingIndex() < MONUMENTS.length-1) return false;
-    if(getFoundMonumentList().includes(getEnigmaOngoing())) return true;
-
-    return false;
-}
