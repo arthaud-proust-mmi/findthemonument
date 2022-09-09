@@ -67,7 +67,7 @@ function showGameEndedBottom() {
 function updateTitle(){
   const header__step_value = document.querySelector('.header__step-value');
   if(getEnigmaOngoingIndex() <= 0){
-    header__step_value.innerHTML =  "Aucun monument trouvé...";
+    header__step_value.innerHTML =  "Aucun pour l'instant";
   }
   else{
     const newTitle = MONUMENTS[getEnigmaOngoingIndex()-1].title;
@@ -80,7 +80,8 @@ function updateEnigma(){
   bottom__info_text_item.innerHTML = newEnigma;
 }
 function updateProgressBar(){
-  document.querySelector('#value-progression').innerHTML = getEnigmaOngoingIndex();
-  let progessValue = getEnigmaOngoingIndex() * 10;
+  const actualStep = getEnigmaOngoingIndex()+1;
+  document.querySelector('#value-progression').innerHTML = actualStep;
+  let progessValue = actualStep * 10;
   document.querySelector(".load-container__progress").style.width = `${progessValue}%`;
 }

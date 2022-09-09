@@ -38,7 +38,7 @@
               <img class="header__logo" src="/assets/sprites/logo.png">
               <div class="header__info">
                   <span class="header__step-text">Dernier monument trouvé</span>
-                  <h2 class="header__step-value">Aucun monument trouvé...</h2>
+                  <h2 class="header__step-value">Aucun pour l'instant</h2>
               </div>
           </header>
           <header id="header-ended" class="header">
@@ -55,16 +55,14 @@
           <main>
               <div id="bottom-ingame" class="bottom container">
                   <section class="bottom__info">
-                      <header>
-                          <h4>Ta progression</h4>
-                          <span class="info-stage">Étape <span id="value-progression">0</span> sur 10</span>
-                      </header>
-                      <div class="bottom__info-text">
-                          <p id="bottom__info-text_item">Proche de la gare, mon nom est lié au symbole de ma religion.</p>
-                      </div>
-                      <div class="bottom__info-progression">
-                      <div class="load-container__progress"></div>
-                      </div>
+                        <h2>Énigme</h2>
+                        <div class="bottom__info-text">
+                            <p id="bottom__info-text_item">Proche de la gare, mon nom est lié au symbole de ma religion.</p>
+                        </div>
+                        <p class="info-stage">Étape <span id="value-progression">0</span> sur 10</p>
+                        <div class="bottom__info-progression">
+                            <div class="load-container__progress"></div>
+                        </div>
                   </section>
                   <section class="bottom__actions">
                         <button onclick="openPopupHint()" class="bottom__hint">
@@ -76,8 +74,7 @@
               <div id="bottom-ended" class="bottom container">
                 <section class="bottom__info">
                     <header>
-                        <h4>Tu as tout trouvé !</h4>
-                        <span class="info-stage">Étape 10 sur 10</span>
+                        <h2>Tu as tout trouvé !</h2>
                     </header>
                     <div class="bottom__info-text">
                         <p id="bottom__info-text_item">On dirait bien que tu es un vrai Bordelais ! Non pas qu’on en doutait...</p>

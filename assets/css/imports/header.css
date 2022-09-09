@@ -30,7 +30,7 @@
   flex-direction: column;
   gap: 0.2rem;
 }
-.header__info > * {
+.header__info h2 {
   margin: 0;
   padding: 0;
 }

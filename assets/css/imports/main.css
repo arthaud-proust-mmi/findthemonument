@@ -76,10 +76,16 @@ main {
 .bottom .bottom__info{
   justify-self: start;
 }
+
+.bottom h2 {
+  padding: 0;
+  margin-bottom: .3rem;
+}
+
 .bottom__info-progression{
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   width: 12rem;
   height: 0.5rem;
   border-radius: 5rem;
@@ -93,6 +99,7 @@ main {
   transition: width 0.5s;
 }
 .info-stage{
+  margin-top: 1.5rem;
   font-size: 0.8rem;
 }
 .bottom__info header{
