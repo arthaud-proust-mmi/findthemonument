@@ -60,9 +60,14 @@ function startNextEnigmaOrOpenPopupEnd() {
 
 //--------------UI----------------//
 function updateTitle(){
-  const newTitle = MONUMENTS[getEnigmaOngoingIndex()].title;
   const header__step_value = document.querySelector('.header__step-value');
-  header__step_value.innerHTML = newTitle;
+  if(getEnigmaOngoingIndex() <= 0){
+    header__step_value.innerHTML =  "Aucun monument trouvé...";
+  }
+  else{
+    const newTitle = MONUMENTS[getEnigmaOngoingIndex()-1].title;
+    header__step_value.innerHTML = newTitle;
+  }
 }
 function updateEnigma(){
   const newEnigma = MONUMENTS[getEnigmaOngoingIndex()].enigma;
