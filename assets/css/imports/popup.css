@@ -83,21 +83,20 @@
     width: var(--size);
 }
 
-.popupHint {
 
+.popupHint__image-container {
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 1rem 0;
 }
-
 #popupHint__image {
     height: auto;
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    margin: 1rem 0;
-    border-radius: 30px;
 
     user-select: none;
     pointer-events: none;
 
     filter: blur(2px);
-    overflow: hidden;
 }
