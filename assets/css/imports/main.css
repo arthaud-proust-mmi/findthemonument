@@ -80,6 +80,9 @@ main {
   background-color: var(--primary);
   transition: width 0.5s;
 }
+.info-stage{
+  font-size: 0.8rem;
+}
 .bottom__info header{
   margin-bottom: 1rem;
 }
@@ -107,4 +110,3 @@ main {
   border-radius: 100%;
   padding: .5rem;
 }
-
