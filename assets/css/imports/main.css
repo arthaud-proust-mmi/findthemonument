@@ -123,3 +123,7 @@ main {
   border-radius: 100%;
   padding: .5rem;
 }
+
+.rules__icon{
+  width: 1rem;
+}
