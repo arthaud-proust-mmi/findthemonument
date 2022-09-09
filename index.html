@@ -13,6 +13,7 @@
         <script src="assets/js/monuments-data.js"></script>
         <script src="assets/js/monuments.js"></script>
         <script src="assets/js/enigma.js"></script>
+        <script src="assets/js/game.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +28,7 @@
     <body>
         <div id="map" class="map"></div>
         <div class="container-global">
-          <header class="header">
+          <header id="header" class="header">
               <!-- LOGO -->
               <img class="header__logo" src="/assets/sprites/logo.png">
               <div class="header__info">
@@ -72,8 +73,10 @@
                     </div>
                 </section>
                 <section class="bottom__ctas">
-                    <button class="btn-primary">Partager</button>
-                    <button class="btn-secondary">Recommencer</button>
+                    <button id="btn-share" class="btn-primary">
+                        Partager la culture
+                    </button>
+                    <button id="btn-restartgame" class="btn-secondary">Recommencer l'aventure</button>
                 </section>
             </div>
           </main>
@@ -142,7 +145,7 @@
                 <p>
                     Psst... c’est bien parce que c’est toi
                 </p>
-                <button id="popupHint__get-solution" class="popup__btn-cta btn-primary">Je veux la solution !</button>
+                <button id="popupHint__get-solution" class="popup__btn-cta btn-secondary">Je veux la solution !</button>
             </div>
         </div>
 
@@ -164,13 +167,11 @@
                 <button class="popup__btn-close">
                     <img src="/assets/sprites/close.svg" alt="x">
                 </button>
-                <h1>Bravo !</h1>
-                <p id="popupEnd__text"></p>
-                <p>Clique sur le pin ajouté pour en savoir plus sur le monument.</p>
-                <h2>T'es un vrai Bordelais</h2>
-                <p>
-                    L'instant culture arrive à sa fin, on espère qu'il t'aura plus sinon on t'égorge
-                </p>
+                <h1>Tu as tout trouvé !</h1>
+                <img src="/assets/sprites/end.svg" alt="">
+                <button class="popup__btn-cta btn-primary">
+                     !
+                </button>
             </div>
         </div>
 

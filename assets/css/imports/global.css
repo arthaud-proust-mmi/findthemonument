@@ -5,6 +5,7 @@
 
     --primary: #6F1C36;
     --white: #FFFFFF;
+    --gray: rgba(239, 239, 239, 0.3);
     --text: #1E1E1E;
     --background: #FFECD9;
 
@@ -84,5 +85,5 @@ p {
 
 .btn-secondary {
     color: var(--primary);
-    background: var(--white);
+    background: var(--gray);
 }
