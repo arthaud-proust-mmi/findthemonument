@@ -78,7 +78,7 @@
 .popupHint__image-container, .popupHintQR__image-container {
     border-radius: 30px;
     overflow: hidden;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
 }
 #popupHint__image, #popupHintQR__image {
     height: auto;

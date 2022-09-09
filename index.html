@@ -94,10 +94,18 @@
         <div class="popup" id="popupIntro">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <h1>Pars à la découverte de Bordeaux en 10 monuments</h1>
-                <p>Explore la ville de Bordeaux en scannant les différents QR codes disséminés dans toute la ville</p>
+                <h1>Pars à la découverte de Bordeaux en <b>10 monuments</b></h1>
+                <p>
+                    Explore la ville de Bordeaux en cherchant le monument indiqué par l'énigmes et rends-y toi.
+                </p>
+                <p>
+                    Tu y trouveras un <b>QR code à scanner</b> pour récupérer des informations sur le monument et passer à l'énigme suivante.
+                </p>
+                <p>
+                    Chaque monument est classé au <b>patrimoine mondial de l'UNESCO</b>, ils font parti de l'histoire de Bordeaux !
+                </p>
                 <button class="popup__btn-cta btn-primary">
-                    C'est parti
+                    C'est parti !
                 </button>
             </div>
         </div>
@@ -107,13 +115,14 @@
           <div class="popup__inner">
               <h1>Les règles au cas où tu aurais oublié</h1>
               <p>
-                Découvre Bordeaux en allant sur le monument indiqué par <img class="text-icon" src="./assets/sprites/pin_primary_shadow.png" alt="une épingle">.
+                Cherche le monument indiqué par l'énigme. Scanne le QR code sur place pour récupérer des informations sur le monument et passer à l'énigme suivante.
               </p>
               <p>
-                Scanne le QR code sur place, qui te permettra d’accéder à la suite de ton parcours tout en te donnant quelques indications sur le monument actuel.
+                Tous les monuments trouvés sont indiqués par <img class="text-icon" src="./assets/sprites/pin_primary_shadow.png" alt="une épingle">. 
+                <br/> Tu peux cliquer dessus pour lire les informations du monument.
               </p>
               <p>
-                  Si tu es coincé pas de panique, tu peux cliquer sur <img class="text-icon" src="./assets/sprites/inline-help.svg" alt="l'ampoule"> et tu y trouveras ton bonheur !
+                  Si tu es coincé, pas de panique, tu peux cliquer sur <img class="text-icon" src="./assets/sprites/inline-help.svg" alt="l'ampoule"> et tu y trouveras un indice !
               </p>
                 <button id="popupRules__hint-qr" class="popup__btn-cta btn-secondary" onclick="openPopupHintQR()">
                     Où est le QR code?
@@ -160,10 +169,7 @@
         <div class="popup" id="popupHint">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h2>Indice</h2>
+                <h1>Voici un indice</h1>
                 <div class="popupHint__image-container">
                     <img id="popupHint__image">
                 </div>
@@ -177,14 +183,11 @@
         <div class="popup" id="popupHintQR">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h2>Où est le QR code?</h2>
+                <h1>Où est le QR code?</h1>
                 <div class="popupHintQR__image-container">
                     <img id="popupHintQR__image">
                 </div>
-                <p>Il est possible qu'il ai été arraché ou décollé, si c'est le cas, pas de soucis on va continuer sans :)</p>
+                <p>Il est possible qu'il ait été arraché ou décollé, si c'est le cas, pas de soucis on va continuer sans :)</p>
                 <button id="popupHintQR__get-solution" class="popup__btn-cta btn-secondary">Il n'y a plus le QR code</button>
             </div>
         </div>
