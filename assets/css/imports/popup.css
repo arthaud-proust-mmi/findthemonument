@@ -89,7 +89,7 @@
     user-select: none;
     pointer-events: none;
 }
-#popupHint__image {
+#popupHint__image {
     filter: blur(2px);
 }
 
