@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', function() {
     document.getElementById('btn-share').addEventListener('click', function() {
         navigator.share({
             title: document.title,
-            text: 'Découvre la ville de Bordeaux avec une chasse au trésor!',
+            text: 'Découvre la ville de Bordeaux avec une chasse au trésor !\n',
             url: 'https://findthemonument.netlify.app',
           }); 
     })
