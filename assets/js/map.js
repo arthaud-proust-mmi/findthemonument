@@ -5,6 +5,8 @@ const GEOGRAPHIC_PROJ  = "EPSG:4326";
 const MERCATOR_PROJ = "EPSG:3857";
 const BASE_ZOOM = 13;
 
+const monumentsSource = new ol.source.Vector({});
+
 window.addEventListener('DOMContentLoaded', function() {
 
     const map = new ol.Map({
@@ -30,7 +32,6 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
     
-    const monumentsSource = new ol.source.Vector({});
     
     renderOnlyFoundMonuments(monumentsSource);
 
@@ -65,20 +66,22 @@ window.addEventListener('DOMContentLoaded', function() {
     map.addLayer(unclusteredMonumentsLayer)
 })
 
-function renderAllMonuments(monumentsSource) {
-    MONUMENTS.forEach(monumentData=>renderMonument(monumentsSource, monumentData));
+function renderAllMonuments() {
+    monumentsSource.clear();
+    MONUMENTS.forEach(monumentData=>renderMonument(monumentData));
 }
 
-function renderOnlyFoundMonuments(monumentsSource) {
+function renderOnlyFoundMonuments() {
+    monumentsSource.clear();
     monumentsFoundList = getFoundMonumentList();
     
     MONUMENTS.forEach(monumentData=>{
         if(!monumentsFoundList.includes(monumentData.id)) return;
-        renderMonument(monumentsSource, monumentData)
+        renderMonument(monumentData)
     });
 }
 
-function renderMonument(monumentsSource, monumentData) {
+function renderMonument(monumentData) {
     let monumentFeature = new ol.Feature(new ol.geom.Point(ol.proj.fromLonLat([
         monumentData.position.lon,
         monumentData.position.lat

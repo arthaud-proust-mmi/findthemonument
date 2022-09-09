@@ -58,23 +58,7 @@
 
 .popup__btn-cta
 {    
-    background:none;
-    border:none;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem 1rem;
-    background: var(--primary);
-    border-radius: 12px;
-    position:relative; 
-    margin: 0 auto;
-    width: 100%;
-    
     margin-top:20px;
-
-    font-weight: var(--fw-semibold);
-    color: var(--background);
 }
 
 .popup__btn-close img {

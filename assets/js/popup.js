@@ -35,9 +35,10 @@ window.addEventListener('DOMContentLoaded', function() {
         el.addEventListener('click', closePopupEnd);
     })
 
-    popupHint.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+    popupHint.querySelectorAll('.popup__backdrop, .popup__btn-close').forEach(el=>{
         el.addEventListener('click', closePopupHint);
     })
+    popupHint.querySelector('.popup__btn-cta').addEventListener('click', showEnigmaSolution);
 
     popupInfoMonument.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupInfoMonument);
@@ -68,7 +69,10 @@ function closePopupNoMonument() {popupNoMonument.classList.remove('popup-open')}
 function openPopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.add('popup-open')}
 function closePopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.remove('popup-open')}
 
-function openPopupEnd() {popupEnd.classList.add('popup-open')}
+function openPopupEnd(monumentData) {
+    popupEnd.querySelector('#popupEnd__text').innerHTML = `Tu as trouvé, c'était bien <b>${monumentData.title}</b>!`
+    popupEnd.classList.add('popup-open')
+}
 function closePopupEnd() {popupEnd.classList.remove('popup-open')}
 
 function openPopupHint() {
@@ -87,7 +91,7 @@ function openPopupInfoMonument(monumentData) {
 function closePopupInfoMonument() {popupInfoMonument.classList.remove('popup-open')}
 
 function openPopupMonumentFound(monumentData) {
-    popupMonumentFound.querySelector('#popupMonumentFound__text').innerText = `Tu as trouvé, c'était bien ${monumentData.title}!`
+    popupMonumentFound.querySelector('#popupMonumentFound__text').innerHTML = `Tu as trouvé, c'était bien <b>${monumentData.title}</b>!`
     popupMonumentFound.classList.add('popup-open')
 }
 function closePopupMonumentFound() {popupMonumentFound.classList.remove('popup-open')}

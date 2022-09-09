@@ -41,7 +41,7 @@
             </button>
           </div>
           <main>
-              <div class="bottom container">
+              <div id="bottom-ingame" class="bottom container">
                   <section class="bottom__info">
                       <header>
                           <h4>Ta progression</h4>
@@ -60,6 +60,22 @@
                         </button>
                   </section>
               </div>
+
+              <div id="bottom-ended" class="bottom container">
+                <section class="bottom__info">
+                    <header>
+                        <h4>Tu as tout trouvé !</h4>
+                        <span class="info-stage">Etape 10 sur 10</span>
+                    </header>
+                    <div class="bottom__info-text">
+                        <p id="bottom__info-text_item">On dirait bien que tu es un vrai Bordelais ! Non pas qu’on en doutait...</p>
+                    </div>
+                </section>
+                <section class="bottom__ctas">
+                    <button class="btn-primary">Partager</button>
+                    <button class="btn-secondary">Recommencer</button>
+                </section>
+            </div>
           </main>
         </div>
 
@@ -69,7 +85,7 @@
             <div class="popup__inner">
                 <h1>Pars à la découverte de Bordeaux en 10 monuments</h1>
                 <p>Explore la ville de Bordeaux en scannant les différents QR codes disséminés dans toute la ville</p>
-                <button class="popup__btn-cta">
+                <button class="popup__btn-cta btn-primary">
                     C'est parti
                 </button>
             </div>
@@ -126,7 +142,7 @@
                 <p>
                     Psst... c’est bien parce que c’est toi
                 </p>
-                <button id="popupHint__get-solution" class="popup__btn-cta">Je veux la solution !</button>
+                <button id="popupHint__get-solution" class="popup__btn-cta btn-primary">Je veux la solution !</button>
             </div>
         </div>
 
@@ -136,7 +152,7 @@
                 <h1>Bravo !</h1>
                 <p id="popupMonumentFound__text"></p>
                 <p>Clique sur le pin ajouté pour en savoir plus sur le monument.</p>
-                <button class="popup__btn-cta">
+                <button class="popup__btn-cta btn-primary">
                     Énigme suivante
                 </button>
             </div>
@@ -149,6 +165,8 @@
                     <img src="/assets/sprites/close.svg" alt="x">
                 </button>
                 <h1>Bravo !</h1>
+                <p id="popupEnd__text"></p>
+                <p>Clique sur le pin ajouté pour en savoir plus sur le monument.</p>
                 <h2>T'es un vrai Bordelais</h2>
                 <p>
                     L'instant culture arrive à sa fin, on espère qu'il t'aura plus sinon on t'égorge

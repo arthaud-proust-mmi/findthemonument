@@ -1,7 +1,11 @@
 const COOKIE_ONGOING_ENIGMA = "ongoing_enigma";
 
 window.addEventListener("DOMContentLoaded", function(){
-  if(isEnigmaOngoing()){
+  if(!isEnigmaOngoing()) return;
+
+  if(isGameEnded()) {
+    showGameEndedBottom();
+  } else {
     startEnigma(getEnigmaOngoing());
   }
 })
@@ -30,6 +34,12 @@ function setEnigmaOngoing(monumentId) {
     return Cookies.set(COOKIE_ONGOING_ENIGMA, monumentId, { sameSite: 'strict', expires: 60 });
 }
 
+function showEnigmaSolution() {
+    closePopupHint();
+    addMonumentToFoundList(getEnigmaOngoing());
+    startNextEnigmaOrOpenPopupEnd();
+}
+
 function startFirstEnigmaIfNoneOngoing() {
     console.log(!isEnigmaOngoing());
     if(!isEnigmaOngoing()) {
@@ -43,12 +53,11 @@ function startFirstEnigma() {
 }
 
 function startEnigma(monumentId) {
+    showInGameBottom();
     setEnigmaOngoing(monumentId);
 
     // mettre à jour les infos de l'ui
-    updateTitle();
-    updateEnigma();
-    updateProgressBar()
+    updateUIInfos();
 }
 
 function startNextEnigmaOrOpenPopupEnd() {
@@ -59,11 +68,34 @@ function startNextEnigmaOrOpenPopupEnd() {
         const nextEnigmaMonumentId = MONUMENTS[enigmaOngoingIndex+1].id
         startEnigma(nextEnigmaMonumentId);
     } else {
-        openPopupEnd()
+        openPopupEnd(MONUMENTS[enigmaOngoingIndex])
+        showGameEndedBottom();
     }
 }
 
 //--------------UI----------------//
+function updateUIInfos() {
+  updateTitle();
+  updateEnigma();
+  updateProgressBar()
+}
+
+function showInGameBottom() {
+  bottomGameEnded = document.getElementById('bottom-ended');
+  bottomIngame = document.getElementById('bottom-ingame');
+
+  bottomIngame.classList.add('bottom-open');
+  bottomGameEnded.classList.remove('bottom-open');
+}
+
+function showGameEndedBottom() {
+  bottomGameEnded = document.getElementById('bottom-ended');
+  bottomIngame = document.getElementById('bottom-ingame');
+
+  bottomGameEnded.classList.add('bottom-open');
+  bottomIngame.classList.remove('bottom-open');
+}
+
 function updateTitle(){
   const header__step_value = document.querySelector('.header__step-value');
   if(getEnigmaOngoingIndex() <= 0){
@@ -80,9 +112,7 @@ function updateEnigma(){
   bottom__info_text_item.innerHTML = newEnigma;
 }
 function updateProgressBar(){
-  const load_container__progress = document.querySelector(".load-container__progress");
-  const value_progression = document.querySelector('#value-progression');
-  value_progression.innerHTML = getEnigmaOngoingIndex();
-  let value = getEnigmaOngoingIndex() * 10;
-  load_container__progress.style.width = ""+value+"%";
+  document.querySelector('#value-progression').innerHTML = getEnigmaOngoingIndex();
+  let progessValue = getEnigmaOngoingIndex() * 10;
+  document.querySelector(".load-container__progress").style.width = `${progessValue}%`;
 }

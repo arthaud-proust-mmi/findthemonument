@@ -70,4 +70,13 @@ function addMonumentToFoundList(monumentId) {
 
     console.log(monumentsFoundList);
     Cookies.set(COOKIE_MONUMENTS_FOUND, JSON.stringify(monumentsFoundList), { sameSite: 'strict', expires: 60 })
+
+    renderOnlyFoundMonuments();
+}
+
+function isGameEnded() {
+    if(getEnigmaOngoingIndex() < MONUMENTS.length-1) return false;
+    if(getFoundMonumentList().includes(getEnigmaOngoing())) return true;
+
+    return false;
 }

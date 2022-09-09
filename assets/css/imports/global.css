@@ -4,8 +4,8 @@
     --p-container: 1rem;
 
     --primary: #6F1C36;
-    --white: FFF4E8;
-    --text: 1E1E1E;
+    --white: #FFFFFF;
+    --text: #1E1E1E;
     --background: #FFECD9;
 
     --fw-regular: 400;
@@ -62,3 +62,27 @@ p {
     margin-bottom: 0.4rem;
 }
 
+.btn-primary, .btn-secondary {
+    background:none;
+    border:none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    position:relative; 
+    margin: 0 auto;
+    width: 100%;
+    
+    font-weight: var(--fw-semibold);
+}
+.btn-primary {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.btn-secondary {
+    color: var(--primary);
+    background: var(--white);
+}

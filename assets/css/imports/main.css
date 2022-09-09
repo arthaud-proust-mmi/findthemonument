@@ -51,8 +51,8 @@ main {
 
 
 .bottom{
+  display: none;
   padding: 2rem 3rem;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -63,6 +63,14 @@ main {
   box-sizing: border-box;
 
   gap: 1rem;
+}
+
+.bottom-open {
+  display: flex;
+}
+
+#bottom-ended {
+  flex-direction: column;
 }
 
 .bottom .bottom__info{
@@ -90,11 +98,15 @@ main {
 .bottom__info header{
   margin-bottom: 1rem;
 }
-.bottom__actions{
+.bottom__actions, .bottom__ctas{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+}
+.bottom__ctas {
+  width: 100%;
 }
 
 .bottom__hint {
