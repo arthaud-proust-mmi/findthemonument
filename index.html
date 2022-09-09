@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Find the monument</title>
+        <title>Find The Monument</title>
 
         <link rel="shortcut icon" href="./assets/sprites/pin_primary_x1080.png" type="image/x-icon">
 
@@ -35,7 +35,6 @@
         <div id="map" class="map"></div>
         <div class="container-global">
           <header id="header-ingame" class="header">
-              <!-- LOGO -->
               <img class="header__logo" src="/assets/sprites/logo.png">
               <div class="header__info">
                   <span class="header__step-text">Dernier monument trouvé</span>
@@ -43,7 +42,6 @@
               </div>
           </header>
           <header id="header-ended" class="header">
-            <!-- LOGO -->
             <img class="header__logo" src="/assets/sprites/logo.png">
             <div class="header__info">
                 <button class="btn-secondary" onclick="openPopupCredits()">Voir les crédits</button>
@@ -112,7 +110,7 @@
           <div class="popup__inner">
               <h1>Les règles au cas où tu aurais oublié</h1>
               <p>
-                Découvre Bordeaux en allant sur le monument indiqué par <img class="text-icon" src="./assets/sprites/pin_primary.png" alt="une épingle">.
+                Découvre Bordeaux en allant sur le monument indiqué par <img class="text-icon" src="./assets/sprites/pin_primary_shadow.png" alt="une épingle">.
               </p>
               <p>
                 Scanne le QR code sur place, qui te permettra d’accéder à la suite de ton parcours tout en te donnant quelques indications sur le monument actuel.
@@ -142,9 +140,7 @@
         <div class="popup" id="popupNoMonument">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <but<link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">Oulà?</h1>
+                <h1>Oulà?</h1>
                 <p>
                     Ce QR code n'est lié à aucun monument !
                 </p>
@@ -201,7 +197,7 @@
             <div class="popup__inner">
                 <h1>Bravo !</h1>
                 <p id="popupMonumentFound__text"></p>
-                <p>Clique sur le pin beige <img class="text-icon" src="./assets/sprites/pin_primary.png" alt=""> pour en savoir plus sur le monument.</p>
+                <p>Clique sur le dernier pin ajouté (<img class="text-icon" src="./assets/sprites/pin_yellow_shadow.png" alt="le beige">) pour en savoir plus sur le monument.</p>
                 <button class="popup__btn-cta btn-primary">
                     Énigme suivante
                 </button>
@@ -217,7 +213,7 @@
                 <h1>Tu as tout trouvé !</h1>
                 <img src="/assets/sprites/end.svg" alt="">
                 <button class="popup__btn-cta btn-primary">
-                     !
+                    Je suis joie !
                 </button>
             </div>
         </div>
