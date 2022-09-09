@@ -3,11 +3,9 @@ const COOKIE_ONGOING_ENIGMA = "ongoing_enigma";
 window.addEventListener("DOMContentLoaded", function(){
   if(!isEnigmaOngoing()) return;
 
-  if(isGameEnded()) {
-    showGameEndedBottom();
-  } else {
-    startEnigma(getEnigmaOngoing());
-  }
+  if(isGameEnded()) return;
+
+  startEnigma(getEnigmaOngoing());
 })
 
 function isEnigmaOngoing() {

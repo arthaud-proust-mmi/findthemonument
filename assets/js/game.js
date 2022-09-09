@@ -12,6 +12,11 @@ window.addEventListener('DOMContentLoaded', function() {
             url: 'https://findthemonument.netlify.app',
           }); 
     })
+
+    if(isGameEnded()) {
+        showGameEndedBottom();
+        showGameEndedHeader();
+    }
 })
 
 function isGameEnded() {
@@ -28,27 +33,35 @@ function updateUIInfos() {
   updateProgressBar()
 }
 
-function showHeader() {
-    document.getElementById('header').classList.add('header-visible');
+function showIngameHeader() {
+    const ingameHeader = document.getElementById('header-ingame');
+    const gameEndedHeader = document.getElementById('header-ended');
+
+    ingameHeader.classList.add('header-visible');
+    gameEndedHeader.classList.remove('header-visible');
 }
-function hideHeader() {
-    document.getElementById('header').classList.remove('header-visible');
+function showGameEndedHeader() {
+    const ingameHeader = document.getElementById('header-ingame');
+    const gameEndedHeader = document.getElementById('header-ended');
+
+    gameEndedHeader.classList.add('header-visible');
+    ingameHeader.classList.remove('header-visible');
 }
 
 function showInGameBottom() {
-  bottomGameEnded = document.getElementById('bottom-ended');
-  bottomIngame = document.getElementById('bottom-ingame');
+  const gameEndedEnded = document.getElementById('bottom-ended');
+  const ingameBottom = document.getElementById('bottom-ingame');
 
-  bottomIngame.classList.add('bottom-open');
-  bottomGameEnded.classList.remove('bottom-open');
+  ingameBottom.classList.add('bottom-open');
+  gameEndedEnded.classList.remove('bottom-open');
 }
 
 function showGameEndedBottom() {
-  bottomGameEnded = document.getElementById('bottom-ended');
-  bottomIngame = document.getElementById('bottom-ingame');
+  const gameEndedEnded = document.getElementById('bottom-ended');
+  const ingameBottom = document.getElementById('bottom-ingame');
 
-  bottomGameEnded.classList.add('bottom-open');
-  bottomIngame.classList.remove('bottom-open');
+  gameEndedEnded.classList.add('bottom-open');
+  ingameBottom.classList.remove('bottom-open');
 }
 
 function updateTitle(){

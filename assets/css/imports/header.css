@@ -1,6 +1,6 @@
 .header{
   z-index: 15;
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -16,6 +16,10 @@
   box-shadow: rgba(0,0,0,0.25) 0 4px 4px;
 }
 
+.header-visible {
+  display: flex;
+}
+
 .header__logo {
   width: auto;
   height: 2rem;
@@ -27,4 +31,9 @@
 }
 .header__step-value {
   font-weight: 500;
+}
+
+
+#header-ended {
+  justify-content: space-between;
 }

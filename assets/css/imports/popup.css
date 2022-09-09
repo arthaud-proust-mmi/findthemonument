@@ -36,10 +36,11 @@
     width: calc( 100vw - calc( 2 * var(--p-container) ) );
     padding: 2rem;
     
-    background: var(--background);
+    background: var(--white);
     border-radius: 30px;
 }
 .popup__scroll {
+    width: 100%;
     margin-right: -1rem;
     padding-right: 1rem;
     overflow-y: auto;
@@ -89,4 +90,16 @@
     pointer-events: none;
 
     filter: blur(2px);
+}
+
+#popupCredits p {
+    display: flex;
+    flex-direction: column;
+}
+#popupCredits img {
+    height: 2rem;
+}
+#popupCredits a[href] {
+    color: inherit;
+    text-decoration: underline;
 }

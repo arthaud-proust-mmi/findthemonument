@@ -7,6 +7,7 @@ const popupHint = document.getElementById('popupHint');
 const popupEnd = document.getElementById('popupEnd');
 const popupInfoMonument = document.getElementById('popupInfoMonument');
 const popupMonumentFound = document.getElementById('popupMonumentFound');
+const popupCredits = document.getElementById('popupCredits');
 
 const popupCloseBtns = document.querySelectorAll('.btn__close-popup')
 popupNoMonument
@@ -51,6 +52,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
     popupMonumentFound.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
         el.addEventListener('click', closePopupMonumentFound);
+    })
+
+    popupCredits.querySelectorAll('.popup__backdrop, .popup__btn-close, .popup__btn-cta').forEach(el=>{
+        el.addEventListener('click', closePopupCredits);
     })
 
 })
@@ -107,3 +112,7 @@ function openPopupMonumentFound(monumentData) {
     popupMonumentFound.classList.add('popup-open')
 }
 function closePopupMonumentFound() {popupMonumentFound.classList.remove('popup-open')}
+
+
+function openPopupCredits() {popupCredits.classList.add('popup-open')}
+function closePopupCredits() {popupCredits.classList.remove('popup-open')}

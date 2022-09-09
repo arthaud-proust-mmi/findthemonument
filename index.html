@@ -32,13 +32,20 @@
         </div>
         <div id="map" class="map"></div>
         <div class="container-global">
-          <header id="header" class="header">
+          <header id="header-ingame" class="header">
               <!-- LOGO -->
               <img class="header__logo" src="/assets/sprites/logo.png">
               <div class="header__info">
                   <span class="header__step-text">Dernier monument :</span>
                   <h3 class="header__step-value">Aucun monument trouvé...</h3>
               </div>
+          </header>
+          <header id="header-ended" class="header">
+            <!-- LOGO -->
+            <img class="header__logo" src="/assets/sprites/logo.png">
+            <div class="header__info">
+                <button class="btn-secondary" onclick="openPopupCredits()">Voir les crédits</button>
+            </div>
           </header>
           <div class="actions">
             <button id="popup-intro-btn" onclick="openPopupRules()">
@@ -200,6 +207,48 @@
                     <p id="popupInfoMonument__description"></p>
                     <h2 id="popupInfoMonument__funfact-title">Petite anecdote</h2>
                     <p id="popupInfoMonument__funfact-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="popupCredits">
+            <div class="popup__backdrop"></div>
+            <div class="popup__inner">
+                <button class="popup__btn-close">
+                    <img src="/assets/sprites/close.svg" alt="x">
+                </button>
+                <h1>Crédits</h1>
+                <div class="popup__scroll">
+                    <h2>Design</h2>
+                    <p>
+                        <a target="_blank" rel="noopener" href="https://jasonnago.com">Jason Nago</a>
+                        <a target="_blank" rel="noopener" href="https://fr.linkedin.com/in/le%C3%AFly-coquard-83a0b4223">Leïly Coquard-Misono</a>
+                        <a>Loïc Leforestier</a>
+                    </p>
+                    
+                    <h2>Direction Artistique</h2>
+                    <p>
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/elo_lsn_/">Élodie Laisne</a>
+                        <a target="_blank" rel="noopener" href="https://lanfeust-projects.com/">Mattéo Lambert</a>
+                    </p>
+
+                    <h2>Développement</h2>
+                    <p>
+                        <a target="_blank" rel="noopener" href="https://arthaudproust.fr">Arthaud Proust</a>
+                        <a target="_blank" rel="noopener" href="https://nehemiatelusma.com">Nehémia Telusma</a>
+                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tstranquang/">Thaï-Son Tarn Quang</a>
+                    </p>
+
+                    <h2>Stratégie de communication</h2>
+                    <p>
+                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tristan-rebeyrol-6a754924b/">Tristan Rebeyrol</a>
+                        <a>Nino Lefort</a>
+                    </p>
+
+                    <h2>Projet universitaire</h2>
+                    <a target="_blank" rel="noopener" href="https://mmibordeaux.com">
+                        <img src="/assets/sprites/mmi.svg" alt="">
+                    </a>    
                 </div>
             </div>
         </div>
