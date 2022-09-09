@@ -60,7 +60,6 @@ function getFoundMonumentList() {
     return monumentsFoundList;
 }
 
-
 function addMonumentToFoundList(monumentId) {
     monumentsFoundList = getFoundMonumentList();
 

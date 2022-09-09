@@ -71,7 +71,11 @@ function closePopupMonumentAlreadyFound() {popupMonumentAlreadyFound.classList.r
 function openPopupEnd() {popupEnd.classList.add('popup-open')}
 function closePopupEnd() {popupEnd.classList.remove('popup-open')}
 
-function openPopupHint() {popupHint.classList.add('popup-open')}
+function openPopupHint() {
+    const monumentData = getEnigmaOngoingMonumentData();
+    popupHint.querySelector('#popupHint__image').src = monumentData.images.hint;
+    popupHint.classList.add('popup-open')
+}
 function closePopupHint() {popupHint.classList.remove('popup-open')}
 
 function openPopupInfoMonument(monumentData) {

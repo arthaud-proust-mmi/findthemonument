@@ -14,6 +14,11 @@ function getEnigmaOngoing() {
     return Cookies.get(COOKIE_ONGOING_ENIGMA);
 }
 
+function getEnigmaOngoingMonumentData() {
+    const enigmaOngoing = getEnigmaOngoing();
+    return MONUMENTS.find(monument=>monument.id==enigmaOngoing);
+}
+
 function getEnigmaOngoingIndex() {
     if(!isEnigmaOngoing()) return -1;
 
