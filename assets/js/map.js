@@ -148,11 +148,7 @@ function addGeolocation(map) {
     const positionFeature = new ol.Feature();
     positionFeature.setStyle(positionStyle);
 
-    geolocation.on('change:position', function () {
-        console.log('position changed');
-        const coordinates = geolocation.getPosition();
-        positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
-    });
+    geolocation.on('change:position', ()=>handlePositionChanged(map, geolocation, positionFeature));
 
     new ol.layer.Vector({
         map,
@@ -160,6 +156,63 @@ function addGeolocation(map) {
             features: [
                 // accuracyFeature, 
                 positionFeature,
+            ],
+        }),
+    });
+}
+
+function formatLength(line) {
+    const length = ol.sphere.getLength(line);
+    let output;
+    if (length > 100) {
+      output = Math.round((length / 1000) * 100) / 100 + ' ' + 'km';
+    } else {
+      output = Math.round(length * 100) / 100 + ' ' + 'm';
+    }
+    return output;
+};
+
+function lineLengthToMeters(line) {
+    const length = ol.sphere.getLength(line);
+    return Math.round(length * 100) / 100;
+};
+function lineLengthToKilometers(line) {
+    const length = ol.sphere.getLength(line);
+    return Math.round((length / 1000) * 100) / 100;
+};
+
+function handlePositionChanged(map, geolocation, positionFeature) {
+    console.log('position changed');
+    const geolocationCoordinates = geolocation.getPosition();
+    positionFeature.setGeometry(geolocationCoordinates ? new ol.geom.Point(geolocationCoordinates) : null);
+
+    const monumentCoordinatesObj = getEnigmaOngoingMonumentData().position;
+    const monumentCoordinatesGeo = [
+        monumentCoordinatesObj.lon,
+        monumentCoordinatesObj.lat,
+    ];
+    const monumentCoordinatesMerca = ol.proj.transform(monumentCoordinatesGeo, GEOGRAPHIC_PROJ, MERCATOR_PROJ)
+
+
+
+    console.log([
+        geolocationCoordinates,
+        monumentCoordinatesMerca
+    ]);
+
+    const geometryLine = new ol.geom.LineString([
+        geolocationCoordinates,
+        monumentCoordinatesMerca
+    ])
+    var featureLine = new ol.Feature({
+        geometry: geometryLine
+    });
+    console.log(lineLengthToKilometers(geometryLine));
+    new ol.layer.Vector({
+        map,
+        source: new ol.source.Vector({
+            features: [
+                featureLine,
             ],
         }),
     });
