@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: 100vh;
 }
-main {
+#bottoms {
     z-index: 10;
 
     width: 100vw;
@@ -15,10 +15,16 @@ main {
     justify-content: space-between;
 
     gap: 1rem;
+    transition: transform var(--ui-transition-duration);
+    transform: translateY(100%);
+}
+
+#bottoms.bottoms-visible {
+    transform: translateY(0);
 }
 
 
-.actions {
+#actions {
     pointer-events: none;
 
     z-index: 15;
@@ -31,15 +37,21 @@ main {
     justify-content: flex-end;
     align-items: flex-end;
     padding: 2rem;
+    transition: transform var(--ui-transition-duration);
+    transform: translateX(100%);
 }
 
-.actions button {
+#actions.actions-visible {
+    transform: translateX(0);
+}
+
+#actions button {
   pointer-events: all;
   border: none;
   background: none;
 }
 
-.actions button img {
+#actions button img {
   --size: 1.5rem;
   height: var(--size);
   width: var(--size);

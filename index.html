@@ -76,243 +76,249 @@
        
         <div id="map" class="map"></div>
         <div class="container-global">
-          <header id="header-ingame" class="header">
-              <img class="header__logo" src="/assets/sprites/logo.png">
-              <div class="header__info">
-                  <span class="header__step-text">Dernier monument trouvé</span>
-                  <h2 class="header__step-value">Aucun pour l'instant</h2>
-              </div>
-          </header>
-          <header id="header-ended" class="header">
-            <img class="header__logo" src="/assets/sprites/logo.png">
-            <div class="header__info">
-                <button class="btn-secondary" onclick="openPopupCredits()">Voir les crédits</button>
-            </div>
-          </header>
-          <div class="actions">
-            <button id="popup-intro-btn" onclick="openPopupRules()">
-                <img src="/assets/sprites/info.svg" alt="?">
-            </button>
-          </div>
-          <main>
-              <div id="bottom-ingame" class="bottom container">
-                  <section class="bottom__info">
-                        <h2>Énigme</h2>
-                        <div class="bottom__info-text">
-                            <p id="bottom__info-text_item">Proche de la gare, mon nom est lié au symbole de ma religion.</p>
-                        </div>
-                        <p class="info-stage">Étape <span id="value-progression">0</span> sur 10</p>
-                        <div class="bottom__info-progression">
-                            <div class="load-container__progress"></div>
-                        </div>
-                  </section>
-                  <section class="bottom__actions">
-                        <button onclick="openPopupHint()" class="bottom__hint">
-                            <img src="/assets/sprites/hint.svg" alt="?">
-                        </button>
-                  </section>
-              </div>
-
-              <div id="bottom-ended" class="bottom container">
-                <section class="bottom__info">
-                    <header>
-                        <h2>Tu as tout trouvé !</h2>
-                    </header>
-                    <div class="bottom__info-text">
-                        <p id="bottom__info-text_item">On dirait bien que tu es un vrai Bordelais ! Non pas qu’on en doutait...</p>
+            <div id="headers">
+                <header id="header-ingame" class="header">
+                    <img class="header__logo" src="/assets/sprites/logo.png">
+                    <div class="header__info">
+                        <span class="header__step-text">Dernier monument trouvé</span>
+                        <h2 class="header__step-value">Aucun pour l'instant</h2>
                     </div>
-                </section>
-                <section class="bottom__ctas">
-                    <button id="btn-share" class="btn-primary">
-                        Partager la culture
+                </header>
+                <header id="header-ended" class="header">
+                    <img class="header__logo" src="/assets/sprites/logo.png">
+                    <div class="header__info">
+                        <button class="btn-secondary" onclick="openPopupCredits()">Voir les crédits</button>
+                    </div>
+                </header>
+            </div>  
+            <div id="actions">
+                <button id="popup-intro-btn" onclick="openPopupRules()">
+                    <img src="/assets/sprites/info.svg" alt="?">
+                </button>
+            </div>
+            <div id="bottoms">
+                <div id="bottom-ingame" class="bottom container">
+                    <section class="bottom__info">
+                            <h2>Énigme</h2>
+                            <div class="bottom__info-text">
+                                <p id="bottom__info-text_item">Proche de la gare, mon nom est lié au symbole de ma religion.</p>
+                            </div>
+                            <p class="info-stage">Étape <span id="value-progression">0</span> sur 10</p>
+                            <div class="bottom__info-progression">
+                                <div class="load-container__progress"></div>
+                            </div>
+                    </section>
+                    <section class="bottom__actions">
+                            <button onclick="openPopupHint()" class="bottom__hint">
+                                <img src="/assets/sprites/hint.svg" alt="?">
+                            </button>
+                    </section>
+                </div>
+
+                <div id="bottom-ended" class="bottom container">
+                    <section class="bottom__info">
+                        <header>
+                            <h2>Tu as tout trouvé !</h2>
+                        </header>
+                        <div class="bottom__info-text">
+                            <p id="bottom__info-text_item">On dirait bien que tu es un vrai Bordelais ! Non pas qu’on en doutait...</p>
+                        </div>
+                    </section>
+                    <section class="bottom__ctas">
+                        <button id="btn-share" class="btn-primary">
+                            Partager la culture
+                        </button>
+                        <button id="btn-restartgame" class="btn-secondary">Recommencer l'aventure</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="popups">
+
+            
+
+            <div class="popup" id="popupIntro">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <h1>Pars à la découverte de Bordeaux en <b>10 monuments</b></h1>
+                    <p>
+                        Explore la ville de Bordeaux en cherchant le monument indiqué par l'énigmes et rends-y toi.
+                    </p>
+                    <p>
+                        Tu y trouveras un <b>QR code à scanner</b> pour récupérer des informations sur le monument et passer à l'énigme suivante.
+                    </p>
+                    <p>
+                        Chaque monument est classé au <b>patrimoine mondial de l'UNESCO</b>, ils font parti de l'histoire de Bordeaux !
+                    </p>
+                    <button class="popup__btn-cta btn-primary">
+                        C'est parti !
                     </button>
-                    <button id="btn-restartgame" class="btn-secondary">Recommencer l'aventure</button>
-                </section>
-            </div>
-          </main>
-        </div>
-
-
-        <div class="popup" id="popupIntro">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <h1>Pars à la découverte de Bordeaux en <b>10 monuments</b></h1>
-                <p>
-                    Explore la ville de Bordeaux en cherchant le monument indiqué par l'énigmes et rends-y toi.
-                </p>
-                <p>
-                    Tu y trouveras un <b>QR code à scanner</b> pour récupérer des informations sur le monument et passer à l'énigme suivante.
-                </p>
-                <p>
-                    Chaque monument est classé au <b>patrimoine mondial de l'UNESCO</b>, ils font parti de l'histoire de Bordeaux !
-                </p>
-                <button class="popup__btn-cta btn-primary">
-                    C'est parti !
-                </button>
-            </div>
-        </div>
-
-        <div class="popup" id="popupRules">
-          <div class="popup__backdrop"></div>
-          <div class="popup__inner">
-              <h1>Les règles au cas où tu aurais oublié</h1>
-              <p>
-                Cherche le monument indiqué par l'énigme. Scanne le QR code sur place pour récupérer des informations sur le monument et passer à l'énigme suivante.
-              </p>
-              <p>
-                Tous les monuments trouvés sont indiqués par <img class="text-icon" src="./assets/sprites/pin_primary_shadow.png" alt="une épingle">. 
-                <br/> Tu peux cliquer dessus pour lire les informations du monument.
-              </p>
-              <p>
-                  Si tu es coincé, pas de panique, tu peux cliquer sur <img class="text-icon" src="./assets/sprites/inline-help.svg" alt="l'ampoule"> et tu y trouveras un indice !
-              </p>
-                <button id="popupRules__hint-qr" class="popup__btn-cta btn-secondary" onclick="openPopupHintQR()">
-                    Où est le QR code?
-                </button>
-          </div>
-        </div>
-
-        <div class="popup" id="popupWrongMonument">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h1>Oups...</h1>
-                <p>
-                    Ce n'est pas le bon QR code :(
-                </p>
-            </div>
-        </div>
-
-        <div class="popup" id="popupNoMonument">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <h1>Oulà?</h1>
-                <p>
-                    Ce QR code n'est lié à aucun monument !
-                </p>
-            </div>
-        </div>
-
-        <div class="popup" id="popupMonumentAlreadyFound">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h1>Encore?</h1>
-                <p>
-                    Tu as déjà scanné ce code QR :)
-                </p>
-            </div>
-        </div>
-
-        <div class="popup" id="popupHint">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <h1>Voici un indice</h1>
-                <div class="popupHint__image-container">
-                    <img id="popupHint__image">
-                </div>
-                <p>
-                    Psst... c’est bien parce que c’est toi
-                </p>
-                <button id="popupHint__get-solution" class="popup__btn-cta btn-secondary">Toujours pas, je veux la solution !</button>
-            </div>
-        </div>
-
-        <div class="popup" id="popupHintQR">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <h1>Où est le QR code?</h1>
-                <div class="popupHintQR__image-container">
-                    <img id="popupHintQR__image">
-                </div>
-                <p>Il est possible qu'il ait été arraché ou décollé, si c'est le cas, pas de soucis on va continuer sans :)</p>
-                <button id="popupHintQR__get-solution" class="popup__btn-cta btn-secondary">Il n'y a plus le QR code</button>
-            </div>
-        </div>
-
-        <div class="popup" id="popupMonumentFound">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <h1>Bravo !</h1>
-                <p id="popupMonumentFound__text"></p>
-                <p>Clique sur le dernier pin ajouté (<img class="text-icon" src="./assets/sprites/pin_yellow_shadow.png" alt="le beige">) pour en savoir plus sur le monument.</p>
-                <button class="popup__btn-cta btn-primary">
-                    Énigme suivante
-                </button>
-            </div>
-        </div>
-
-        <div class="popup" id="popupEnd">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h1>Tu as tout trouvé !</h1>
-                <img src="/assets/sprites/end.svg" alt="">
-                <button class="popup__btn-cta btn-primary">
-                    Je suis joie !
-                </button>
-            </div>
-        </div>
-
-        <div class="popup" id="popupInfoMonument">
-            <div class="popup__backdrop"></div>
-            <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <div class="popup__scroll">
-                    <h1 id="popupInfoMonument__title"></h1>
-                    <p id="popupInfoMonument__description"></p>
-                    <h2 id="popupInfoMonument__funfact-title">Petite anecdote</h2>
-                    <p id="popupInfoMonument__funfact-text"></p>
                 </div>
             </div>
-        </div>
 
-        <div class="popup" id="popupCredits">
+            <div class="popup" id="popupRules">
             <div class="popup__backdrop"></div>
             <div class="popup__inner">
-                <button class="popup__btn-close">
-                    <img src="/assets/sprites/close.svg" alt="x">
-                </button>
-                <h1>Crédits</h1>
-                <div class="popup__scroll">
-                    <h2>Design</h2>
-                    <p>
-                        <a target="_blank" rel="noopener" href="https://jasonnago.com">Jason Nago</a>
-                        <a target="_blank" rel="noopener" href="https://fr.linkedin.com/in/le%C3%AFly-coquard-83a0b4223">Leïly Coquard-Misono</a>
-                        <a>Loïc Leforestier</a>
-                    </p>
-                    
-                    <h2>Direction Artistique</h2>
-                    <p>
-                        <a target="_blank" rel="noopener" href="https://www.instagram.com/elo_lsn_/">Élodie Laisne</a>
-                        <a target="_blank" rel="noopener" href="https://lanfeust-projects.com/">Mattéo Lambert</a>
-                    </p>
+                <h1>Les règles au cas où tu aurais oublié</h1>
+                <p>
+                    Cherche le monument indiqué par l'énigme. Scanne le QR code sur place pour récupérer des informations sur le monument et passer à l'énigme suivante.
+                </p>
+                <p>
+                    Tous les monuments trouvés sont indiqués par <img class="text-icon" src="./assets/sprites/pin_primary_shadow.png" alt="une épingle">. 
+                    <br/> Tu peux cliquer dessus pour lire les informations du monument.
+                </p>
+                <p>
+                    Si tu es coincé, pas de panique, tu peux cliquer sur <img class="text-icon" src="./assets/sprites/inline-help.svg" alt="l'ampoule"> et tu y trouveras un indice !
+                </p>
+                    <button id="popupRules__hint-qr" class="popup__btn-cta btn-secondary" onclick="openPopupHintQR()">
+                        Où est le QR code?
+                    </button>
+            </div>
+            </div>
 
-                    <h2>Développement</h2>
+            <div class="popup" id="popupWrongMonument">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <button class="popup__btn-close">
+                        <img src="/assets/sprites/close.svg" alt="x">
+                    </button>
+                    <h1>Oups...</h1>
                     <p>
-                        <a target="_blank" rel="noopener" href="https://arthaudproust.fr">Arthaud Proust</a>
-                        <a target="_blank" rel="noopener" href="https://nehemiatelusma.com">Nehémia Telusma</a>
-                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tstranquang/">Thai-Son Tran Quang</a>
+                        Ce n'est pas le bon QR code :(
                     </p>
+                </div>
+            </div>
 
-                    <h2>Stratégie de communication</h2>
+            <div class="popup" id="popupNoMonument">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <h1>Oulà?</h1>
                     <p>
-                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tristan-rebeyrol-6a754924b/">Tristan Rebeyrol</a>
-                        <a>Nino Lefort</a>
+                        Ce QR code n'est lié à aucun monument !
                     </p>
+                </div>
+            </div>
 
-                    <h2>Projet universitaire</h2>
-                    <a target="_blank" rel="noopener" href="https://mmibordeaux.com">
-                        <img src="/assets/sprites/mmi.svg" alt="">
-                    </a>    
+            <div class="popup" id="popupMonumentAlreadyFound">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <button class="popup__btn-close">
+                        <img src="/assets/sprites/close.svg" alt="x">
+                    </button>
+                    <h1>Encore?</h1>
+                    <p>
+                        Tu as déjà scanné ce code QR :)
+                    </p>
+                </div>
+            </div>
+
+            <div class="popup" id="popupHint">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <h1>Voici un indice</h1>
+                    <div class="popupHint__image-container">
+                        <img id="popupHint__image">
+                    </div>
+                    <p>
+                        Psst... c’est bien parce que c’est toi
+                    </p>
+                    <button id="popupHint__get-solution" class="popup__btn-cta btn-secondary">Toujours pas, je veux la solution !</button>
+                </div>
+            </div>
+
+            <div class="popup" id="popupHintQR">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <h1>Où est le QR code?</h1>
+                    <div class="popupHintQR__image-container">
+                        <img id="popupHintQR__image">
+                    </div>
+                    <p>Il est possible qu'il ait été arraché ou décollé, si c'est le cas, pas de soucis on va continuer sans :)</p>
+                    <button id="popupHintQR__get-solution" class="popup__btn-cta btn-secondary">Il n'y a plus le QR code</button>
+                </div>
+            </div>
+
+            <div class="popup" id="popupMonumentFound">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <h1>Bravo !</h1>
+                    <p id="popupMonumentFound__text"></p>
+                    <p>Clique sur le dernier pin ajouté (<img class="text-icon" src="./assets/sprites/pin_yellow_shadow.png" alt="le beige">) pour en savoir plus sur le monument.</p>
+                    <button class="popup__btn-cta btn-primary">
+                        Énigme suivante
+                    </button>
+                </div>
+            </div>
+
+            <div class="popup" id="popupEnd">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <button class="popup__btn-close">
+                        <img src="/assets/sprites/close.svg" alt="x">
+                    </button>
+                    <h1>Tu as tout trouvé !</h1>
+                    <img src="/assets/sprites/end.svg" alt="">
+                    <button class="popup__btn-cta btn-primary">
+                        Je suis joie !
+                    </button>
+                </div>
+            </div>
+
+            <div class="popup" id="popupInfoMonument">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <button class="popup__btn-close">
+                        <img src="/assets/sprites/close.svg" alt="x">
+                    </button>
+                    <div class="popup__scroll">
+                        <h1 id="popupInfoMonument__title"></h1>
+                        <p id="popupInfoMonument__description"></p>
+                        <h2 id="popupInfoMonument__funfact-title">Petite anecdote</h2>
+                        <p id="popupInfoMonument__funfact-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup" id="popupCredits">
+                <div class="popup__backdrop"></div>
+                <div class="popup__inner">
+                    <button class="popup__btn-close">
+                        <img src="/assets/sprites/close.svg" alt="x">
+                    </button>
+                    <h1>Crédits</h1>
+                    <div class="popup__scroll">
+                        <h2>Design</h2>
+                        <p>
+                            <a target="_blank" rel="noopener" href="https://jasonnago.com">Jason Nago</a>
+                            <a target="_blank" rel="noopener" href="https://fr.linkedin.com/in/le%C3%AFly-coquard-83a0b4223">Leïly Coquard-Misono</a>
+                            <a>Loïc Leforestier</a>
+                        </p>
+                        
+                        <h2>Direction Artistique</h2>
+                        <p>
+                            <a target="_blank" rel="noopener" href="https://www.instagram.com/elo_lsn_/">Élodie Laisne</a>
+                            <a target="_blank" rel="noopener" href="https://lanfeust-projects.com/">Mattéo Lambert</a>
+                        </p>
+
+                        <h2>Développement</h2>
+                        <p>
+                            <a target="_blank" rel="noopener" href="https://arthaudproust.fr">Arthaud Proust</a>
+                            <a target="_blank" rel="noopener" href="https://nehemiatelusma.com">Nehémia Telusma</a>
+                            <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tstranquang/">Thai-Son Tran Quang</a>
+                        </p>
+
+                        <h2>Stratégie de communication</h2>
+                        <p>
+                            <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tristan-rebeyrol-6a754924b/">Tristan Rebeyrol</a>
+                            <a>Nino Lefort</a>
+                        </p>
+
+                        <h2>Projet universitaire</h2>
+                        <a target="_blank" rel="noopener" href="https://mmibordeaux.com">
+                            <img src="/assets/sprites/mmi.svg" alt="">
+                        </a>    
+                    </div>
                 </div>
             </div>
         </div>

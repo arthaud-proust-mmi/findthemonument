@@ -3,6 +3,8 @@
 :root {
     --p-container: 1rem;
 
+    --ui-transition-duration: .4s;
+
     --primary: #6F1C36;
     --white: #FFFFFF;
     --ligthPrimary: rgba(111, 28, 54, 0.05);

@@ -72,7 +72,10 @@ window.addEventListener('DOMContentLoaded', function() {
         if (!feature) return;
 
         openPopupInfoMonument(feature.attributes.monumentData);
-      });
+    });
+
+    map.on('movestart', hideUI);
+    map.on('moveend', showUI);
 
     map.addLayer(unclusteredMonumentsLayer)
 })

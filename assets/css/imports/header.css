@@ -1,5 +1,14 @@
+#headers {
+    z-index: 15;
+    transition: transform var(--ui-transition-duration);
+    transform: translateY(-100%);
+}
+
+#headers.headers-visible {
+    transform: translateY(0);
+}
+
 .header{
-  z-index: 15;
   display: none;
   flex-direction: row;
   align-items: center;
@@ -14,10 +23,12 @@
   background-color: #fff;
   border-radius: 25px;
   box-shadow: rgba(0,0,0,0.25) 0 4px 4px;
+
+
 }
 
 .header-visible {
-  display: flex;
+    display: flex;
 }
 
 .header__logo {

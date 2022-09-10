@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
+    showUI();
+    
     document.getElementById('btn-restartgame').addEventListener('click', function() {
         Cookies.remove(COOKIE_MONUMENTS_FOUND, { sameSite: 'strict'})
         Cookies.remove(COOKIE_ONGOING_ENIGMA, { sameSite: 'strict'})
@@ -84,4 +86,16 @@ function updateProgressBar(){
   document.querySelector('#value-progression').innerHTML = actualStep;
   let progessValue = actualStep * 10;
   document.querySelector(".load-container__progress").style.width = `${progessValue}%`;
+}
+
+function hideUI() {
+    document.getElementById('headers').classList.remove('headers-visible');
+    document.getElementById('bottoms').classList.remove('bottoms-visible');
+    document.getElementById('actions').classList.remove('actions-visible');
+}
+
+function showUI() {
+    document.getElementById('headers').classList.add('headers-visible');
+    document.getElementById('bottoms').classList.add('bottoms-visible');
+    document.getElementById('actions').classList.add('actions-visible');
 }
