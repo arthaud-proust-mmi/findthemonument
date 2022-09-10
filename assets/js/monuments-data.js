@@ -20,7 +20,7 @@ const MONUMENTS = [
         title: 'Pont de Pierre',
         enigma: "Reliant les deux rives, je me constitue de 17 arches",
         description: "Permettant de relier les deux rives, le Pont de pierre est le premier pont construit à Bordeaux. Sa construction, réalisée de 1810 à 1822, a été ordonnée par Napoléon Bonaparte afin de faciliter le passage au-dessus de la Garonne. Si Claude Deschamps, l’ingénieur à la tête du projet, avait d’abord en tête la construction d’un pont en bois, il a finalement opté pour une conception de briques et de pierres. C’est en 2002 que le Pont de pierre est classé comme monument historique.",
-        funfact: "Propos absolument inutile et sans aucune valeur historique, vous serez ravi·es de savoir que le Pont de pierre est composé de 17 arches, soit le nombre exact de lettres dans le nom de Napoléon Bonaparte.",
+        funfact: "Le pont de pierre a été construit parce que traverser la Garonne en barque à chaque fois, c’est quand même une énorme perte de temps. Et contre-anecdote: le nombre d'arches n'a rien à voir avec Napoléon!",
         images: {
             hint: '/assets/images/207392_hint-min.png',
             qr: '/assets/images/207392_qr-min.png'
