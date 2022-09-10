@@ -1,6 +1,10 @@
+const UI_SHOW_MS_DELAY = 0;
+const UI_HIDE_MS_DELAY = 0;
+var uiTimeout;
+
 window.addEventListener('DOMContentLoaded', function() {
     showUI();
-    
+
     document.getElementById('btn-restartgame').addEventListener('click', function() {
         Cookies.remove(COOKIE_MONUMENTS_FOUND, { sameSite: 'strict'})
         Cookies.remove(COOKIE_ONGOING_ENIGMA, { sameSite: 'strict'})
@@ -86,6 +90,16 @@ function updateProgressBar(){
   document.querySelector('#value-progression').innerHTML = actualStep;
   let progessValue = actualStep * 10;
   document.querySelector(".load-container__progress").style.width = `${progessValue}%`;
+}
+
+function willHideUI() {
+    clearTimeout(uiTimeout);
+    uiTimeout = setTimeout(hideUI, UI_HIDE_MS_DELAY);
+}
+
+function willShowUI() {
+    clearTimeout(uiTimeout);
+    uiTimeout = setTimeout(showUI, UI_SHOW_MS_DELAY);
 }
 
 function hideUI() {

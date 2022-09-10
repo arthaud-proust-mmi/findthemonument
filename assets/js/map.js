@@ -74,8 +74,8 @@ window.addEventListener('DOMContentLoaded', function() {
         openPopupInfoMonument(feature.attributes.monumentData);
     });
 
-    map.on('movestart', hideUI);
-    map.on('moveend', showUI);
+    map.on('movestart', willHideUI);
+    map.on('moveend', willShowUI);
 
     map.addLayer(unclusteredMonumentsLayer)
 })
