@@ -30,8 +30,28 @@ const pinStyles = {
         }),
     }),
 }
+const positionStyle = new ol.style.Style({
+    image: new ol.style.Circle({
+        radius: 8,
+        fill: new ol.style.Fill({
+            color: '#3399CC',
+        }),
+        stroke: new ol.style.Stroke({
+            color: '#fff',
+            width: 2,
+        }),
+    }),
+})
 
 window.addEventListener('DOMContentLoaded', function() {
+
+    const view = new ol.View({
+        center: ol.proj.fromLonLat([
+            -0.579541,
+            44.837912
+        ]),
+        zoom: BASE_ZOOM
+    });
 
     const map = new ol.Map({
         interactions: ol.interaction.defaults({altShiftDragRotate:false, pinchRotate:false}), 
@@ -46,16 +66,10 @@ window.addEventListener('DOMContentLoaded', function() {
             new ol.layer.Tile({source: new ol.source.Stamen({layer: 'terrain'})}),
             new ol.layer.Tile({source: new ol.source.Stamen({layer: 'terrain-labels'})}),
         ],
-        view: new ol.View({
-            center: ol.proj.fromLonLat([
-                -0.579541,
-                44.837912
-            ]),
-            zoom: BASE_ZOOM
-        })
+        view
     });
 
-    
+    addGeolocation(map);  
     
     renderOnlyFoundMonuments(monumentsSource);
 
@@ -114,4 +128,39 @@ function renderMonument(monumentData) {
     monumentFeature.attributes = {monumentData};
 
     monumentsSource.addFeature(monumentFeature);
+}
+
+function addGeolocation(map) {
+    const geolocation = new ol.Geolocation({
+        // enableHighAccuracy must be set to true to have the heading value.
+        trackingOptions: {
+          enableHighAccuracy: true,
+        },
+        projection: map.getView().getProjection(),
+    });
+
+    geolocation.setTracking(true);
+
+    const accuracyFeature = new ol.Feature();
+    geolocation.on('change:accuracyGeometry', function () {
+        accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
+    });
+    const positionFeature = new ol.Feature();
+    positionFeature.setStyle(positionStyle);
+
+    geolocation.on('change:position', function () {
+        console.log('position changed');
+        const coordinates = geolocation.getPosition();
+        positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+    });
+
+    new ol.layer.Vector({
+        map,
+        source: new ol.source.Vector({
+            features: [
+                // accuracyFeature, 
+                positionFeature,
+            ],
+        }),
+    });
 }
