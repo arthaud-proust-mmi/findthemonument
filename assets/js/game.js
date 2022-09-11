@@ -113,3 +113,9 @@ function showUI() {
     document.getElementById('bottoms').classList.add('bottoms-visible');
     document.getElementById('actions').classList.add('actions-visible');
 }
+
+function toggleUI() {
+    document.getElementById('headers').classList.toggle('headers-visible');
+    document.getElementById('bottoms').classList.toggle('bottoms-visible');
+    document.getElementById('actions').classList.toggle('actions-visible');
+}

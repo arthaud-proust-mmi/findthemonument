@@ -83,13 +83,15 @@ window.addEventListener('DOMContentLoaded', function() {
         const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
             return feature;
         });
-        if (!feature) return;
-
-        openPopupInfoMonument(feature.attributes.monumentData);
+        if (feature) {
+            openPopupInfoMonument(feature.attributes.monumentData);
+        } else {
+            toggleUI();
+        }
     });
 
-    map.on('movestart', willHideUI);
-    map.on('moveend', willShowUI);
+    // map.on('movestart', willHideUI);
+    // map.on('moveend', willShowUI);
 
     map.addLayer(unclusteredMonumentsLayer)
 })
