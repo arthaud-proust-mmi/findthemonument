@@ -42,6 +42,18 @@ const positionStyle = new ol.style.Style({
         }),
     }),
 })
+const fakePositionStyle = new ol.style.Style({
+    image: new ol.style.Circle({
+        radius: 8,
+        fill: new ol.style.Fill({
+            color: '#EE0033',
+        }),
+        stroke: new ol.style.Stroke({
+            color: '#fff',
+            width: 2,
+        }),
+    }),
+})
 
 window.addEventListener('DOMContentLoaded', function() {
 
@@ -69,8 +81,8 @@ window.addEventListener('DOMContentLoaded', function() {
         view
     });
 
-    addGeolocation(map);  
-    
+    // addGeolocation(map);  
+    addFakePosition(map);
     renderOnlyFoundMonuments(monumentsSource);
 
     const unclusteredMonumentsLayer = new ol.layer.Vector({
@@ -160,6 +172,55 @@ function addGeolocation(map) {
                 positionFeature,
             ],
         }),
+    });
+}
+
+function addFakePosition(map) {
+    const fakePosition = new ol.geom.Point([-67933.55200648373, 5600468.351103661]);
+    const fakePositionFeature = new ol.Feature({
+        geometry: fakePosition
+    });
+    fakePositionFeature.setStyle(fakePositionStyle);
+
+
+    const monumentCoordinatesObj = getEnigmaOngoingMonumentData().position;
+    const monumentCoordinatesGeo = [
+        monumentCoordinatesObj.lon,
+        monumentCoordinatesObj.lat,
+    ];
+    const monumentCoordinatesMerca = ol.proj.transform(monumentCoordinatesGeo, GEOGRAPHIC_PROJ, MERCATOR_PROJ)
+
+    const geometryLine = new ol.geom.LineString([
+        fakePosition.getCoordinates(),
+        monumentCoordinatesMerca
+    ])
+    var featureLine = new ol.Feature({
+        geometry: geometryLine
+    });
+
+    new ol.layer.Vector({
+        map,
+        source: new ol.source.Vector({
+            features: [
+                fakePositionFeature,
+                featureLine
+            ],
+        }),
+    });
+
+    const translate = new ol.interaction.Translate({
+        features: new ol.Collection([fakePositionFeature])
+    });
+    map.addInteraction(translate);
+
+    var coordFakePosition;
+    translate.on('translatestart', function (evt) {
+        coordFakePosition = fakePosition.getCoordinates();
+    });
+    translate.on('translating', function (evt) {
+        geometryLine.setCoordinates([evt.coordinate, monumentCoordinatesMerca]);
+        const distanceInKm = lineLengthToKilometers(geometryLine);
+        updateProximityIndication(distanceInKm);
     });
 }
 

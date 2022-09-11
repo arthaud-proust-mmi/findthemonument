@@ -88,8 +88,17 @@ function updateEnigma(){
 function updateProgressBar(){
   const actualStep = getEnigmaOngoingIndex()+1;
   document.querySelector('#value-progression').innerHTML = actualStep;
-  let progessValue = actualStep * 10;
-  document.querySelector(".load-container__progress").style.width = `${progessValue}%`;
+  let progressValue = actualStep * 10;
+  document.querySelector(".load-container__progress").style.width = `${progressValue}%`;
+}
+
+function distInKMtoPercentage(distanceInKm) {
+    return 20*(Math.log(4/distanceInKm)/Math.log(2));
+}
+
+function updateProximityIndication(distanceInKm) {
+    const progressValue = distInKMtoPercentage(distanceInKm);
+    document.getElementById('proximity-indication__bar-inner').style.height = `${progressValue}%`;
 }
 
 function willHideUI() {

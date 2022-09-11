@@ -36,6 +36,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    gap: 1rem;
     padding: 2rem;
     transition: transform var(--ui-transition-duration);
     transform: translateX(100%);
@@ -46,9 +47,9 @@
 }
 
 #actions button {
-  pointer-events: all;
-  border: none;
-  background: none;
+    pointer-events: all;
+    border: none;
+    background: none;
 }
 
 #actions button img {
@@ -58,6 +59,57 @@
   background: var(--primary);
   border-radius: 100%;
   padding: 0.5rem;
+}
+
+.proximity-indication {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.proximity-indication__bar {
+    position: relative;
+    height: 8rem;
+    width: 5px;
+
+    padding: 1rem .5rem 1.5rem .5rem;
+    /* padding-bottom: 1.5rem; */
+    margin-bottom: -1rem;
+
+    background: var(--white);
+    border-radius: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+}
+#proximity-indication__bar-inner {
+    width: 100%;
+    height: 0%;
+    background: var(--primary);
+    border-radius: 10px;
+    z-index: 1;
+    /* transition: height 0.5s; */
+}
+#proximity-indication__bar-ticks {
+    position: absolute;
+    top:1rem;
+    left: 0.7rem;
+    height: calc( 100% - 2.5rem );
+    /* width: calc( 100% - 1rem ); */
+}
+#proximity-indication__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --size: 1.5rem;
+    height: var(--size);
+    width: var(--size);
+    background: var(--white);
+    border-radius: var(--size);
+    padding: 0.5rem;
+    z-index: 2;
 }
 
 
