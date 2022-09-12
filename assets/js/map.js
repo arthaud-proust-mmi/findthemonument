@@ -210,12 +210,12 @@ function handlePositionChanged(map, geolocation, positionFeature) {
         geometry: geometryLine
     });
     console.log(lineLengthToKilometers(geometryLine));
-    new ol.layer.Vector({
-        map,
-        source: new ol.source.Vector({
-            features: [
-                featureLine,
-            ],
-        }),
-    });
+    // new ol.layer.Vector({
+    //     map,
+    //     source: new ol.source.Vector({
+    //         features: [
+    //             featureLine,
+    //         ],
+    //     }),
+    // });
 }
